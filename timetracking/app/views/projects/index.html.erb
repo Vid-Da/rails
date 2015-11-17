@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+</head>
+<body>
+
+	<h1>Your list is:</h1>
+	<ul>
+		<% @projects.each do |project| %>
+		<li>
+			<%= project.name %>
+			<% if project.description.present? %> 
+				-	<%= project.description %>
+			<% end %>
+		<% end %>
+		
+		</li>	
+	</ul>
+
+</body>
+</html>

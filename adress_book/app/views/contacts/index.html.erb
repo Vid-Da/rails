@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>List of contacts</title>
+</head>
+<body>
+	<h1>Here is your agenda</h1>
+		<ul>
+			<% @contacts.order("name ASC").each do |contact| %>
+			<li>
+				<a href="/contacts/<%= contact.id %>"><%= contact.name %></a>
+			</li>
+		<% end %>
+		</ul>
+
+	<form action="/contacts/new">
+		<button type="submit">Add a contact</button>
+  </form>
+
+</body>
+</html>
