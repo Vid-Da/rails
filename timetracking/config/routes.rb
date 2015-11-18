@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get "/contact" => "site#contact"
   get "/projects" => "projects#index"
   get "/projects/:id" => "projects#show"
-  get "/projects/:id/entries" => "entries#index"
+  get "/projects/:project_id/entries" => "entries#index"
+  get "/projects/:project_id/entries/:month" => "entries#index"
 
 end
 

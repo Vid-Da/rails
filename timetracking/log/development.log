@@ -3600,3 +3600,702 @@ ActionController::RoutingError (No route matches [GET] "/projects/2/show"):
   Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
   Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
   Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-18 09:25:53 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 501ms (Views: 500.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-18 09:25:54 +0100
+Processing by SiteController#home as HTML
+  Rendered site/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 41ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2015-11-18 09:26:01 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "projects" LIMIT 10) subquery_for_count
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY created_at DESC LIMIT 10[0m
+  Rendered projects/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 143ms (Views: 111.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2015-11-18 09:26:01 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "projects" LIMIT 10) subquery_for_count
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY created_at DESC LIMIT 10[0m
+  Rendered projects/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/entries" for 127.0.0.1 at 2015-11-18 09:26:06 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"entries"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 0]]
+Tried to access {"controller"=>"projects", "action"=>"show", "id"=>"entries"} which did not exist.
+  Rendered layouts/404.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 387ms (Views: 59.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2015-11-18 09:26:14 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered projects/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projects/3/entries" for 127.0.0.1 at 2015-11-18 09:26:20 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered entries/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 288ms (ActiveRecord: 0.4ms)
+
+SyntaxError (/home/cuquix/code/rails/timetracking/app/views/entries/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/cuquix/code/rails/timetracking/app/views/entries/index.html.erb:11: syntax error, unexpected $end, expecting keyword_end):
+  app/views/entries/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/entries/index.html.erb:11: syntax error, unexpected $end, expecting keyword_end
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (74.7ms)
+
+
+Started GET "/projects/3/entries" for 127.0.0.1 at 2015-11-18 09:26:36 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered entries/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.9ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1> <%= @project.name %></h1>
+    2: 	<ul>
+    3: 		<% @entries.each do |entry| %>
+    4: 			<li><%= @entries.hours =%>h <%= @entries.minutes %>m - <%= @entries.date =%> </li>
+  app/views/entries/index.html.erb:1:in `_app_views_entries_index_html_erb__1343788127356512107_70236439917900'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.0ms)
+
+
+Started GET "/projects/3/entries" for 127.0.0.1 at 2015-11-18 09:27:49 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ?[0m  [["project_id", 3]]
+  Rendered entries/index.html.erb within layouts/application (96.8ms)
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (undefined method `hours' for #<Entry::ActiveRecord_Associations_CollectionProxy:0x007fc2647b78b0>):
+    1: <h1> <%= @project.name %></h1>
+    2: 	<ul>
+    3: 		<% @entries.each do |entry| %>
+    4: 			<li><%= @entries.hours =%>h <%= @entries.minutes %>m - <%= @entries.date =%> </li>
+    5: 				<% end %>
+    6: 	</ul>
+    7: 
+  app/views/entries/index.html.erb:4:in `block in _app_views_entries_index_html_erb__1343788127356512107_70236439917900'
+  app/views/entries/index.html.erb:3:in `_app_views_entries_index_html_erb__1343788127356512107_70236439917900'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.3ms)
+
+
+Started GET "/projects/3/entries" for 127.0.0.1 at 2015-11-18 09:28:11 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ?[0m  [["project_id", 3]]
+  Rendered entries/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `hours' for #<Entry::ActiveRecord_Associations_CollectionProxy:0x007fc264113e00>):
+    1: <h1> <%= @project.name %></h1>
+    2: 	<ul>
+    3: 		<% @entries.each do |entry| %>
+    4: 			<li><%= @entries.hours %>h <%= @entries.minutes %>m - <%= @entries.date %> </li>
+    5: 				<% end %>
+    6: 	</ul>
+    7: 
+  app/views/entries/index.html.erb:4:in `block in _app_views_entries_index_html_erb__1343788127356512107_70236439635000'
+  app/views/entries/index.html.erb:3:in `_app_views_entries_index_html_erb__1343788127356512107_70236439635000'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.2ms)
+
+
+Started GET "/projects/3/entries" for 127.0.0.1 at 2015-11-18 09:28:44 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ?[0m  [["project_id", 3]]
+  Rendered entries/index.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `hours' for #<Entry::ActiveRecord_Associations_CollectionProxy:0x007fc2642872a0>):
+    1: <h1> <%= @project.name %></h1>
+    2: 	<ul>
+    3: 		<% @entries.each do |entry| %>
+    4: 			<li><%= @entries.hours%> h <%= @entries.minutes %> m - <%= @entries.date %></li>
+    5: 			<% end %>
+    6: 	</ul>
+    7: 
+  app/views/entries/index.html.erb:4:in `block in _app_views_entries_index_html_erb__1343788127356512107_70236440395560'
+  app/views/entries/index.html.erb:3:in `_app_views_entries_index_html_erb__1343788127356512107_70236440395560'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.8ms)
+
+
+Started GET "/projects/3/entries" for 127.0.0.1 at 2015-11-18 09:35:03 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"3"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ?[0m  [["project_id", 3]]
+  Rendered entries/index.html.erb within layouts/application (16.5ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (undefined method `hours' for #<Entry::ActiveRecord_Associations_CollectionProxy:0x007fc2641fa9b8>):
+    1: <h1> <%= @project.name %></h1>
+    2: 	<ul>
+    3: 		<% @entries.each do |entry| %>
+    4: 			<li><%= @entries.hours%> h <%= @entries.minutes %> m - <%= @entries.date %></li>
+    5: 			<% end %>
+    6: 	</ul>
+    7: 
+  app/views/entries/index.html.erb:4:in `block in _app_views_entries_index_html_erb__1343788127356512107_70236440868580'
+  app/views/entries/index.html.erb:3:in `_app_views_entries_index_html_erb__1343788127356512107_70236440868580'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.2ms)
+
+
+Started GET "/projects/3/entries" for 127.0.0.1 at 2015-11-18 09:36:02 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"3"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ?[0m  [["project_id", 3]]
+  Rendered entries/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 09:36:02 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 09:36:02 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 09:36:02 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 09:36:02 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 09:36:02 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 09:36:02 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 09:36:02 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 09:36:02 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 09:36:02 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 09:36:02 +0100
+
+
+Started GET "/projects/3/entries" for 127.0.0.1 at 2015-11-18 09:36:16 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"3"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ?[0m  [["project_id", 3]]
+  Rendered entries/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 48ms (Views: 44.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 09:36:16 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 09:36:16 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 09:36:16 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 09:36:16 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 09:36:16 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 09:36:16 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 09:36:16 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 09:36:16 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 09:36:16 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 09:36:16 +0100
+
+
+Started GET "/projects/5/entries" for 127.0.0.1 at 2015-11-18 09:36:21 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ?[0m  [["project_id", 5]]
+  Rendered entries/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 51ms (Views: 47.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (154.2ms)[0m  [1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "hours" integer, "minutes" integer, "comments" text, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (124.6ms)[0m  [1mCREATE  INDEX "index_entries_on_project_id" ON "entries" ("project_id")[0m
+  [1m[35m (122.2ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "description" varchar) 
+  [1m[36m (135.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (133.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (158.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117102754')
+  [1m[36m (142.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151116154844')[0m
+  [1m[35m (134.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151116102340')
+  [1m[36m (102.5ms)[0m  [1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "hours" integer, "minutes" integer, "comments" text, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (109.4ms)[0m  [1mCREATE  INDEX "index_entries_on_project_id" ON "entries" ("project_id")[0m
+  [1m[35m (110.1ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "description" varchar) 
+  [1m[36m (132.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (132.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (132.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117102754')
+  [1m[36m (155.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151116154844')[0m
+  [1m[35m (111.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151116102340')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project1"], ["description", "project description 1"], ["created_at", "2015-11-18 08:41:17.408566"], ["updated_at", "2015-11-18 08:41:17.408566"]]
+  [1m[35m (203.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:17.718288"], ["project_id", 1], ["created_at", "2015-11-18 08:41:17.739093"], ["updated_at", "2015-11-18 08:41:17.739093"]]
+  [1m[36m (118.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project2"], ["description", "project description 2"], ["created_at", "2015-11-18 08:41:17.860346"], ["updated_at", "2015-11-18 08:41:17.860346"]]
+  [1m[35m (98.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:17.960901"], ["project_id", 2], ["created_at", "2015-11-18 08:41:17.962234"], ["updated_at", "2015-11-18 08:41:17.962234"]]
+  [1m[36m (119.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project3"], ["description", "project description 3"], ["created_at", "2015-11-18 08:41:18.084328"], ["updated_at", "2015-11-18 08:41:18.084328"]]
+  [1m[35m (109.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:18.196050"], ["project_id", 3], ["created_at", "2015-11-18 08:41:18.197588"], ["updated_at", "2015-11-18 08:41:18.197588"]]
+  [1m[36m (107.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project4"], ["description", "project description 4"], ["created_at", "2015-11-18 08:41:18.308362"], ["updated_at", "2015-11-18 08:41:18.308362"]]
+  [1m[35m (131.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:18.442272"], ["project_id", 4], ["created_at", "2015-11-18 08:41:18.443785"], ["updated_at", "2015-11-18 08:41:18.443785"]]
+  [1m[36m (119.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project5"], ["description", "project description 5"], ["created_at", "2015-11-18 08:41:18.565898"], ["updated_at", "2015-11-18 08:41:18.565898"]]
+  [1m[35m (120.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:18.688568"], ["project_id", 5], ["created_at", "2015-11-18 08:41:18.690058"], ["updated_at", "2015-11-18 08:41:18.690058"]]
+  [1m[36m (130.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project6"], ["description", "project description 6"], ["created_at", "2015-11-18 08:41:18.823296"], ["updated_at", "2015-11-18 08:41:18.823296"]]
+  [1m[35m (109.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:18.934902"], ["project_id", 6], ["created_at", "2015-11-18 08:41:18.936432"], ["updated_at", "2015-11-18 08:41:18.936432"]]
+  [1m[36m (463.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project7"], ["description", "project description 7"], ["created_at", "2015-11-18 08:41:19.403960"], ["updated_at", "2015-11-18 08:41:19.403960"]]
+  [1m[35m (118.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:19.526713"], ["project_id", 7], ["created_at", "2015-11-18 08:41:19.529102"], ["updated_at", "2015-11-18 08:41:19.529102"]]
+  [1m[36m (118.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project8"], ["description", "project description 8"], ["created_at", "2015-11-18 08:41:19.652056"], ["updated_at", "2015-11-18 08:41:19.652056"]]
+  [1m[35m (117.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:19.773438"], ["project_id", 8], ["created_at", "2015-11-18 08:41:19.774774"], ["updated_at", "2015-11-18 08:41:19.774774"]]
+  [1m[36m (119.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project9"], ["description", "project description 9"], ["created_at", "2015-11-18 08:41:19.896978"], ["updated_at", "2015-11-18 08:41:19.896978"]]
+  [1m[35m (131.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:20.030950"], ["project_id", 9], ["created_at", "2015-11-18 08:41:20.032319"], ["updated_at", "2015-11-18 08:41:20.032319"]]
+  [1m[36m (130.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project10"], ["description", "project description 10"], ["created_at", "2015-11-18 08:41:20.165536"], ["updated_at", "2015-11-18 08:41:20.165536"]]
+  [1m[35m (131.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:20.299392"], ["project_id", 10], ["created_at", "2015-11-18 08:41:20.300710"], ["updated_at", "2015-11-18 08:41:20.300710"]]
+  [1m[36m (130.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project11"], ["description", "project description 11"], ["created_at", "2015-11-18 08:41:20.433959"], ["updated_at", "2015-11-18 08:41:20.433959"]]
+  [1m[35m (109.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:20.545603"], ["project_id", 11], ["created_at", "2015-11-18 08:41:20.546903"], ["updated_at", "2015-11-18 08:41:20.546903"]]
+  [1m[36m (108.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project12"], ["description", "project description 12"], ["created_at", "2015-11-18 08:41:20.658139"], ["updated_at", "2015-11-18 08:41:20.658139"]]
+  [1m[35m (109.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:20.769774"], ["project_id", 12], ["created_at", "2015-11-18 08:41:20.771058"], ["updated_at", "2015-11-18 08:41:20.771058"]]
+  [1m[36m (130.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project13"], ["description", "project description 13"], ["created_at", "2015-11-18 08:41:20.904409"], ["updated_at", "2015-11-18 08:41:20.904409"]]
+  [1m[35m (109.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:21.016094"], ["project_id", 13], ["created_at", "2015-11-18 08:41:21.017412"], ["updated_at", "2015-11-18 08:41:21.017412"]]
+  [1m[36m (110.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project14"], ["description", "project description 14"], ["created_at", "2015-11-18 08:41:21.130181"], ["updated_at", "2015-11-18 08:41:21.130181"]]
+  [1m[35m (165.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:21.297632"], ["project_id", 14], ["created_at", "2015-11-18 08:41:21.298969"], ["updated_at", "2015-11-18 08:41:21.298969"]]
+  [1m[36m (164.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project15"], ["description", "project description 15"], ["created_at", "2015-11-18 08:41:21.466221"], ["updated_at", "2015-11-18 08:41:21.466221"]]
+  [1m[35m (120.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:21.588774"], ["project_id", 15], ["created_at", "2015-11-18 08:41:21.590096"], ["updated_at", "2015-11-18 08:41:21.590096"]]
+  [1m[36m (108.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project16"], ["description", "project description 16"], ["created_at", "2015-11-18 08:41:21.701358"], ["updated_at", "2015-11-18 08:41:21.701358"]]
+  [1m[35m (109.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:21.812836"], ["project_id", 16], ["created_at", "2015-11-18 08:41:21.814178"], ["updated_at", "2015-11-18 08:41:21.814178"]]
+  [1m[36m (130.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project17"], ["description", "project description 17"], ["created_at", "2015-11-18 08:41:21.947980"], ["updated_at", "2015-11-18 08:41:21.947980"]]
+  [1m[35m (131.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:22.081466"], ["project_id", 17], ["created_at", "2015-11-18 08:41:22.083023"], ["updated_at", "2015-11-18 08:41:22.083023"]]
+  [1m[36m (118.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project18"], ["description", "project description 18"], ["created_at", "2015-11-18 08:41:22.205057"], ["updated_at", "2015-11-18 08:41:22.205057"]]
+  [1m[35m (120.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:22.327667"], ["project_id", 18], ["created_at", "2015-11-18 08:41:22.329116"], ["updated_at", "2015-11-18 08:41:22.329116"]]
+  [1m[36m (119.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project19"], ["description", "project description 19"], ["created_at", "2015-11-18 08:41:22.451149"], ["updated_at", "2015-11-18 08:41:22.451149"]]
+  [1m[35m (133.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:22.586798"], ["project_id", 19], ["created_at", "2015-11-18 08:41:22.588348"], ["updated_at", "2015-11-18 08:41:22.588348"]]
+  [1m[36m (107.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project20"], ["description", "project description 20"], ["created_at", "2015-11-18 08:41:22.699115"], ["updated_at", "2015-11-18 08:41:22.699115"]]
+  [1m[35m (109.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:22.810887"], ["project_id", 20], ["created_at", "2015-11-18 08:41:22.812415"], ["updated_at", "2015-11-18 08:41:22.812415"]]
+  [1m[36m (107.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project21"], ["description", "project description 21"], ["created_at", "2015-11-18 08:41:22.923338"], ["updated_at", "2015-11-18 08:41:22.923338"]]
+  [1m[35m (142.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:23.068983"], ["project_id", 21], ["created_at", "2015-11-18 08:41:23.071804"], ["updated_at", "2015-11-18 08:41:23.071804"]]
+  [1m[36m (126.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project22"], ["description", "project description 22"], ["created_at", "2015-11-18 08:41:23.204147"], ["updated_at", "2015-11-18 08:41:23.204147"]]
+  [1m[35m (117.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:23.325684"], ["project_id", 22], ["created_at", "2015-11-18 08:41:23.327208"], ["updated_at", "2015-11-18 08:41:23.327208"]]
+  [1m[36m (119.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project23"], ["description", "project description 23"], ["created_at", "2015-11-18 08:41:23.449285"], ["updated_at", "2015-11-18 08:41:23.449285"]]
+  [1m[35m (120.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:23.572061"], ["project_id", 23], ["created_at", "2015-11-18 08:41:23.573564"], ["updated_at", "2015-11-18 08:41:23.573564"]]
+  [1m[36m (119.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project24"], ["description", "project description 24"], ["created_at", "2015-11-18 08:41:23.695576"], ["updated_at", "2015-11-18 08:41:23.695576"]]
+  [1m[35m (120.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:23.818280"], ["project_id", 24], ["created_at", "2015-11-18 08:41:23.819780"], ["updated_at", "2015-11-18 08:41:23.819780"]]
+  [1m[36m (119.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Project25"], ["description", "project description 25"], ["created_at", "2015-11-18 08:41:23.941811"], ["updated_at", "2015-11-18 08:41:23.941811"]]
+  [1m[35m (110.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 0], ["minutes", 30], ["date", "2015-11-18 08:41:24.055119"], ["project_id", 25], ["created_at", "2015-11-18 08:41:24.056618"], ["updated_at", "2015-11-18 08:41:24.056618"]]
+  [1m[36m (130.3ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entries_on_project_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entries_on_project_id' AND type='index'
+[0m
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35mProject Load (0.6ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ?[0m  [["project_id", 25]]
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ?[0m  [["project_id", 25]]
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ?[0m  [["project_id", 25]]
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35mProject Load (0.6ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2014-01-01' AND '2014-01-31')  [["project_id", 25]]
+
+
+Started GET "/projects/5/entries" for 127.0.0.1 at 2015-11-18 10:38:49 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/home/cuquix/code/rails/timetracking/app/controllers/entries_controller.rb:8: syntax error, unexpected tLABEL
+		(date: date.beginning_of_month..date.end_of_month)
+		      ^):
+  app/controllers/entries_controller.rb:8: syntax error, unexpected tLABEL
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2015-11-18 10:38:59 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "projects" LIMIT 10) subquery_for_count
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY created_at DESC LIMIT 10[0m
+  Rendered projects/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 412ms (Views: 359.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2015-11-18 10:39:00 +0100
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "projects" LIMIT 10) subquery_for_count
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY created_at DESC LIMIT 10[0m
+  Rendered projects/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/6" for 127.0.0.1 at 2015-11-18 10:39:04 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered projects/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 124ms (Views: 40.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 10:39:11 +0100
+
+SyntaxError (/home/cuquix/code/rails/timetracking/app/controllers/entries_controller.rb:8: syntax error, unexpected tLABEL
+		(date: date.beginning_of_month..date.end_of_month)
+		      ^):
+  app/controllers/entries_controller.rb:8: syntax error, unexpected tLABEL
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.4ms)
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 10:39:31 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 6]]
+  Rendered entries/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 223ms (Views: 42.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 10:39:32 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 10:39:32 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 10:39:32 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 10:39:32 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 10:39:32 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 10:39:32 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 10:39:32 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 10:39:32 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 10:39:32 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 10:39:32 +0100
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 10:39:56 +0100
+
+SyntaxError (/home/cuquix/code/rails/timetracking/app/controllers/entries_controller.rb:8: syntax error, unexpected tLABEL
+			(date: date.beginning_of_month..date.end_of_month)
+			      ^):
+  app/controllers/entries_controller.rb:8: syntax error, unexpected tLABEL
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.4ms)
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 10:40:14 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 6]]
+  Rendered entries/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 83ms (Views: 44.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 10:40:14 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 10:40:14 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 10:40:14 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 10:40:14 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 10:40:14 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 10:40:14 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 10:40:14 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 10:40:14 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 10:40:14 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 10:40:14 +0100

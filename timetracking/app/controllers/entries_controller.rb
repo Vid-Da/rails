@@ -1,8 +1,13 @@
 class EntriesController < ApplicationController
 
 	def index
-		@entries = Project.find_by(params[:id]).entries
+		@project = Project.find_by(id: params[:project_id])
+		
+		date = Date.current
+		@entries = @project.entries.where(date: date.beginning_of_month..date.end_of_month)
 
-	##entries = Entry.where(project_id: params[:id])	
+		@total_hours = @project.total_hours_in_month(date.month, date.year)
 	end
+
+
 end

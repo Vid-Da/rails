@@ -2,7 +2,7 @@
 (1..25).each do |index|
 	project = Project.create(name: "Project#{index}", description: "project description #{index}")
 	
-	project.entries.create(hours: 0, minutes: 30)
+	project.entries.create(hours: 0, minutes: 30, date: Time.now)
 
 ##(1..50) do |i|
 ##	random = Random.new

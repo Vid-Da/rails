@@ -1,3 +1,5 @@
+require 'pry'
+
 class Project < ActiveRecord::Base
 	has_many :entries
 
@@ -17,4 +19,21 @@ class Project < ActiveRecord::Base
 		Project.order('updated_at ASC').limit(number)
 	end
 
+	def total_hours_in_month(month, year)
+		date_start = Date.new(year, month, 1)
+		date_end = Date.new(year, month, -1)
+		month_entries = self.entries.where(date: date_start..date_end)
+
+		total_minutes = month_entries.reduce(0) do |sum, entry|
+			sum + entry.minutes + entry.hours * 60
+		end
+
+		total_hours = total_minutes / 60.0
+	end
+
+		##from = Date.new(year, month, 1)
+		##to = from.end_of_month
+
+		##total_hours = month.entries.sum(&:hour)
+		##total_minutes = month.entries.sum(&:minutes)
 end
