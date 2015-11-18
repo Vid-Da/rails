@@ -6,3 +6,6 @@
 	</ul>
 
 <p>Total hours worked this month <%= @total_hours %></p>
+
+<p><%= link_to("go back to projects", projects_path) %></p>
+<p><%= link_to("Generate new entry", new_project_entry_path(@project)) %><p>
