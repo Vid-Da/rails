@@ -4299,3 +4299,2039 @@ Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac
 
 
 Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 10:40:14 +0100
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 10:49:24 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 6]]
+  Rendered entries/index.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 612ms (Views: 413.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 10:49:25 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 6]]
+  Rendered entries/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 55ms (Views: 52.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 10:49:26 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 10:49:26 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 10:49:26 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 10:49:26 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 10:49:26 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 10:49:26 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 10:49:26 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 10:49:26 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 10:49:26 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 10:49:26 +0100
+  [1m[36mProject Load (2.5ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "projects" WHERE "projects"."name" IS NULL LIMIT 1
+  [1m[36mProject Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'a' LIMIT 1[0m
+  [1m[35mProject Exists (0.4ms)[0m  SELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'adddddddddddddddddddddddddddddddddddddddddddddddddd' LIMIT 1
+  [1m[36mProject Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'deberiaservalido' LIMIT 1[0m
+  [1m[35mProject Exists (0.5ms)[0m  SELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'deberiaservalido' LIMIT 1
+  [1m[36mProject Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'deberiaservalido' LIMIT 1[0m
+  [1m[35mProject Exists (0.4ms)[0m  SELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'deberiaservalidosssssssssssssssssssssssssssssssssssssssssssssssss' LIMIT 1
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mProject Exists (0.5ms)[0m  SELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'Project4' LIMIT 1
+  [1m[36mProject Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'fdsf' LIMIT 1[0m
+  [1m[35mProject Exists (0.4ms)[0m  SELECT  1 AS one FROM "projects" WHERE "projects"."name" = '******' LIMIT 1
+  [1m[36mProject Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'sdfdsfdf' LIMIT 1[0m
+  [1m[35mProject Exists (0.4ms)[0m  SELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'sdfdsfdf' LIMIT 1
+  [1m[36mProject Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'sdfdsfdf' LIMIT 1[0m
+  [1m[35mProject Exists (0.5ms)[0m  SELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'sdfdsfdf' LIMIT 1
+  [1m[36mProject Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'atrt' LIMIT 1[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1[0m
+  [1m[35mProject Load (0.6ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ?[0m  [["project_id", 25]]
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+  [1m[36mProject Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE "projects"."name" = '' LIMIT 1[0m
+  [1m[35mProject Load (0.7ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 4]]
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 12:41:43 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 6]]
+  Rendered entries/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 614ms (Views: 406.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 12:41:45 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 12:41:45 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 12:41:45 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 12:41:45 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 12:41:45 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 12:41:45 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 12:41:45 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 12:41:45 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 12:41:45 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 12:41:45 +0100
+
+
+Started GET "/projects/6/entries/new" for 127.0.0.1 at 2015-11-18 12:41:55 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered entries/new.html.erb within layouts/application (101.1ms)
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `project_entries_path' for #<#<Class:0x000000045c4640>:0x007f491c0ad9a0>):
+    1: <%= form_for [@project, @entry] do |f| %>
+    2: 
+    3: <% end %>
+  app/views/entries/new.html.erb:1:in `_app_views_entries_new_html_erb___149080586028960597_69975989929300'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (70.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (96.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (43.1ms)
+
+
+Started GET "/projects/6/entries/new" for 127.0.0.1 at 2015-11-18 13:01:15 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered entries/new.html.erb within layouts/application (56.3ms)
+Completed 200 OK in 593ms (Views: 400.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 13:01:16 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 13:01:16 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 13:01:16 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 13:01:16 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 13:01:16 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 13:01:16 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 13:01:17 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 13:01:17 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 13:01:17 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 13:01:17 +0100
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 13:01:20 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 6]]
+  Rendered entries/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 51ms (Views: 46.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:06:23 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 6]]
+  Rendered entries/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 53ms (Views: 49.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:06:23 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:06:23 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 14:06:23 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:06:23 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 14:06:23 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 14:06:23 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:06:23 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:06:23 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:06:23 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 14:06:23 +0100
+
+
+Started GET "/projects/6/entries/new" for 127.0.0.1 at 2015-11-18 14:06:43 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered entries/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects/6/entries/new" for 127.0.0.1 at 2015-11-18 14:09:01 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered entries/new.html.erb within layouts/application (112.2ms)
+Completed 200 OK in 160ms (Views: 156.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:09:01 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 14:09:01 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:09:01 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 14:09:01 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:09:01 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 14:09:01 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:09:01 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:09:01 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:09:01 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 14:09:01 +0100
+
+
+Started GET "/projects/6/entries/new" for 127.0.0.1 at 2015-11-18 14:10:55 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered entries/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 59ms (Views: 54.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:10:55 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:10:55 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 14:10:55 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 14:10:55 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:10:55 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 14:10:55 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:10:55 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:10:55 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:10:55 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 14:10:55 +0100
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:16:11 +0100
+
+AbstractController::ActionNotFound (The action 'create' could not be found for EntriesController):
+  actionpack (4.2.4) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (42.6ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:17:20 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L6Jq+T6CDfMN2V/Wof8rIHF++wlM5E8yIhC1NAeNx2WWnzGF9syeEe5PxMy6sDhAZR2fD+2lawfSbHPVv6e4ow==", "entry"=>{"hours"=>"5", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template entries/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/home/cuquix/code/rails/timetracking/app/views"
+):
+  actionview (4.2.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.4) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.4) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.4) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (31.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (22.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (46.3ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:20:15 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L6Jq+T6CDfMN2V/Wof8rIHF++wlM5E8yIhC1NAeNx2WWnzGF9syeEe5PxMy6sDhAZR2fD+2lawfSbHPVv6e4ow==", "entry"=>{"hours"=>"5", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/entries_controller.rb:18:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.4ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:24:32 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L6Jq+T6CDfMN2V/Wof8rIHF++wlM5E8yIhC1NAeNx2WWnzGF9syeEe5PxMy6sDhAZR2fD+2lawfSbHPVv6e4ow==", "entry"=>{"hours"=>"5", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."project_id" = '6' LIMIT 1
+SQLite3::SQLException: no such column: projects.project_id: SELECT  "projects".* FROM "projects" WHERE "projects"."project_id" = '6' LIMIT 1
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.4ms)
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: projects.project_id: SELECT  "projects".* FROM "projects" WHERE "projects"."project_id" = '6' LIMIT 1):
+  app/controllers/entries_controller.rb:18:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.6ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:25:02 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L6Jq+T6CDfMN2V/Wof8rIHF++wlM5E8yIhC1NAeNx2WWnzGF9syeEe5PxMy6sDhAZR2fD+2lawfSbHPVv6e4ow==", "entry"=>{"hours"=>"5", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.9ms)
+
+NoMethodError (undefined method `Entry' for #<Project:0x007fd8b25351a0>):
+  app/controllers/entries_controller.rb:20:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.8ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:25:22 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L6Jq+T6CDfMN2V/Wof8rIHF++wlM5E8yIhC1NAeNx2WWnzGF9syeEe5PxMy6sDhAZR2fD+2lawfSbHPVv6e4ow==", "entry"=>{"hours"=>"5", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 1.4ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/entries_controller.rb:20:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.3ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:26:55 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L6Jq+T6CDfMN2V/Wof8rIHF++wlM5E8yIhC1NAeNx2WWnzGF9syeEe5PxMy6sDhAZR2fD+2lawfSbHPVv6e4ow==", "entry"=>{"hours"=>"5", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 1.4ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/entries_controller.rb:20:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.1ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:27:57 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L6Jq+T6CDfMN2V/Wof8rIHF++wlM5E8yIhC1NAeNx2WWnzGF9syeEe5PxMy6sDhAZR2fD+2lawfSbHPVv6e4ow==", "entry"=>{"hours"=>"5", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.3ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/entries_controller.rb:19:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (98.8ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:31:07 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L6Jq+T6CDfMN2V/Wof8rIHF++wlM5E8yIhC1NAeNx2WWnzGF9syeEe5PxMy6sDhAZR2fD+2lawfSbHPVv6e4ow==", "entry"=>{"hours"=>"5", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.4ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/entries_controller.rb:21:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (66.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (89.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.2ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:31:40 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L6Jq+T6CDfMN2V/Wof8rIHF++wlM5E8yIhC1NAeNx2WWnzGF9syeEe5PxMy6sDhAZR2fD+2lawfSbHPVv6e4ow==", "entry"=>{"hours"=>"5", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.2ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/entries_controller.rb:21:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.0ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:31:42 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L6Jq+T6CDfMN2V/Wof8rIHF++wlM5E8yIhC1NAeNx2WWnzGF9syeEe5PxMy6sDhAZR2fD+2lawfSbHPVv6e4ow==", "entry"=>{"hours"=>"5", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/entries_controller.rb:21:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (91.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (108.9ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:33:57 +0100
+
+SyntaxError (/home/cuquix/code/rails/timetracking/app/controllers/entries_controller.rb:23: syntax error, unexpected tLABEL
+		if entry.save ? redirect_to: index || redirect_to: new
+		                                                  ^):
+  app/controllers/entries_controller.rb:23: syntax error, unexpected tLABEL
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.3ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:33:58 +0100
+
+SyntaxError (/home/cuquix/code/rails/timetracking/app/controllers/entries_controller.rb:23: syntax error, unexpected tLABEL
+		if entry.save ? redirect_to: index || redirect_to: new
+		                                                  ^):
+  app/controllers/entries_controller.rb:23: syntax error, unexpected tLABEL
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.0ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:45:10 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L6Jq+T6CDfMN2V/Wof8rIHF++wlM5E8yIhC1NAeNx2WWnzGF9syeEe5PxMy6sDhAZR2fD+2lawfSbHPVv6e4ow==", "entry"=>{"hours"=>"5", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.5ms)
+
+ActionView::MissingTemplate (Missing template entries/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/home/cuquix/code/rails/timetracking/app/views"
+):
+  app/controllers/entries_controller.rb:26:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (26.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.5ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:45:32 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L6Jq+T6CDfMN2V/Wof8rIHF++wlM5E8yIhC1NAeNx2WWnzGF9syeEe5PxMy6sDhAZR2fD+2lawfSbHPVv6e4ow==", "entry"=>{"hours"=>"5", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 281ms (ActiveRecord: 1.4ms)
+
+ActionView::MissingTemplate (Missing template entries/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/home/cuquix/code/rails/timetracking/app/views"
+):
+  app/controllers/entries_controller.rb:26:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (32.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (85.5ms)
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT  "entries".* FROM "entries"  ORDER BY "entries"."id" DESC LIMIT 1[0m
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:48:23 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 6]]
+  Rendered entries/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 606ms (Views: 410.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:48:25 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:48:25 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:48:25 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 14:48:25 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 14:48:25 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:48:25 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 14:48:25 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:48:25 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:48:25 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 14:48:25 +0100
+
+
+Started GET "/projects/6/entries/new" for 127.0.0.1 at 2015-11-18 14:48:32 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered entries/new.html.erb within layouts/application (149.4ms)
+Completed 200 OK in 199ms (Views: 196.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:48:39 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GPo0mAvBpAOKRmZcdWVpyldY24nAb3Zel1FDDMdoGv6hx2/kw4834WnQ/UZuKnqqQzu/j2EuUmtnLYXtf0JlOA==", "entry"=>{"hours"=>"2", "minutes"=>"30", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.3ms)
+
+ActionView::MissingTemplate (Missing template entries/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/home/cuquix/code/rails/timetracking/app/views"
+):
+  app/controllers/entries_controller.rb:26:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (27.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (90.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (114.7ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:52:49 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GPo0mAvBpAOKRmZcdWVpyldY24nAb3Zel1FDDMdoGv6hx2/kw4834WnQ/UZuKnqqQzu/j2EuUmtnLYXtf0JlOA==", "entry"=>{"hours"=>"2", "minutes"=>"30", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 2.3ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: 
+    2: <%= form_for [@project, @entry] do |f| %>
+    3: 	<%= f.label :hours %>
+    4: 	<%= f.text_field :hours %>
+    5: 	<br>
+  app/views/entries/new.html.erb:2:in `_app_views_entries_new_html_erb__2718196556079166611_69850614172860'
+  app/controllers/entries_controller.rb:26:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.1ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:52:51 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GPo0mAvBpAOKRmZcdWVpyldY24nAb3Zel1FDDMdoGv6hx2/kw4834WnQ/UZuKnqqQzu/j2EuUmtnLYXtf0JlOA==", "entry"=>{"hours"=>"2", "minutes"=>"30", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered entries/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: 
+    2: <%= form_for [@project, @entry] do |f| %>
+    3: 	<%= f.label :hours %>
+    4: 	<%= f.text_field :hours %>
+    5: 	<br>
+  app/views/entries/new.html.erb:2:in `_app_views_entries_new_html_erb__2718196556079166611_69850614172860'
+  app/controllers/entries_controller.rb:26:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.0ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:53:43 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GPo0mAvBpAOKRmZcdWVpyldY24nAb3Zel1FDDMdoGv6hx2/kw4834WnQ/UZuKnqqQzu/j2EuUmtnLYXtf0JlOA==", "entry"=>{"hours"=>"2", "minutes"=>"30", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.7ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: 
+    2: <%= form_for [@project, @entry] do |f| %>
+    3: 	<%= f.label :hours %>
+    4: 	<%= f.text_field :hours %>
+    5: 	<br>
+  app/views/entries/new.html.erb:2:in `_app_views_entries_new_html_erb__2718196556079166611_69850614172860'
+  app/controllers/entries_controller.rb:26:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.9ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:55:37 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GPo0mAvBpAOKRmZcdWVpyldY24nAb3Zel1FDDMdoGv6hx2/kw4834WnQ/UZuKnqqQzu/j2EuUmtnLYXtf0JlOA==", "entry"=>{"hours"=>"2", "minutes"=>"30", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered entries/new.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.6ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: 
+    2: <%= form_for [@project, @entry] do |f| %>
+    3: 	<%= f.label :hours %>
+    4: 	<%= f.text_field :hours %>
+    5: 	<br>
+  app/views/entries/new.html.erb:2:in `_app_views_entries_new_html_erb__2718196556079166611_69850614172860'
+  app/controllers/entries_controller.rb:26:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (40.2ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:56:30 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GPo0mAvBpAOKRmZcdWVpyldY24nAb3Zel1FDDMdoGv6hx2/kw4834WnQ/UZuKnqqQzu/j2EuUmtnLYXtf0JlOA==", "entry"=>{"hours"=>"2", "minutes"=>"30", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 2.7ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: 
+    2: <%= form_for [@project, @entry] do |f| %>
+    3: 	<%= f.label :hours %>
+    4: 	<%= f.text_field :hours %>
+    5: 	<br>
+  app/views/entries/new.html.erb:2:in `_app_views_entries_new_html_erb__2718196556079166611_69850614172860'
+  app/controllers/entries_controller.rb:26:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (35.3ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:56:31 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GPo0mAvBpAOKRmZcdWVpyldY24nAb3Zel1FDDMdoGv6hx2/kw4834WnQ/UZuKnqqQzu/j2EuUmtnLYXtf0JlOA==", "entry"=>{"hours"=>"2", "minutes"=>"30", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered entries/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: 
+    2: <%= form_for [@project, @entry] do |f| %>
+    3: 	<%= f.label :hours %>
+    4: 	<%= f.text_field :hours %>
+    5: 	<br>
+  app/views/entries/new.html.erb:2:in `_app_views_entries_new_html_erb__2718196556079166611_69850614172860'
+  app/controllers/entries_controller.rb:26:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.6ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:56:32 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GPo0mAvBpAOKRmZcdWVpyldY24nAb3Zel1FDDMdoGv6hx2/kw4834WnQ/UZuKnqqQzu/j2EuUmtnLYXtf0JlOA==", "entry"=>{"hours"=>"2", "minutes"=>"30", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: 
+    2: <%= form_for [@project, @entry] do |f| %>
+    3: 	<%= f.label :hours %>
+    4: 	<%= f.text_field :hours %>
+    5: 	<br>
+  app/views/entries/new.html.erb:2:in `_app_views_entries_new_html_erb__2718196556079166611_69850614172860'
+  app/controllers/entries_controller.rb:26:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (22.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.3ms)
+
+
+Started GET "/projects/6/entries/new" for 127.0.0.1 at 2015-11-18 14:56:59 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered entries/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:57:00 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:57:00 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:57:00 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 14:57:00 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 14:57:00 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 14:57:00 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:57:00 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:57:00 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:57:00 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 14:57:00 +0100
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:57:11 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"30V/4NRRf9Q4D2zCX+7vK2XPqYiefR1L2M0QrTpWgT1meCScHB/sNtuZ99hEofxLcazNjj88OX4osdZMgnz++w==", "entry"=>{"hours"=>"56", "minutes"=>"30", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: 
+    2: <%= form_for [@project, @entry] do |f| %>
+    3: 	<%= f.label :hours %>
+    4: 	<%= f.text_field :hours %>
+    5: 	<br>
+  app/views/entries/new.html.erb:2:in `_app_views_entries_new_html_erb__2718196556079166611_69850614172860'
+  app/controllers/entries_controller.rb:26:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (21.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.8ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:57:40 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"30V/4NRRf9Q4D2zCX+7vK2XPqYiefR1L2M0QrTpWgT1meCScHB/sNtuZ99hEofxLcazNjj88OX4osdZMgnz++w==", "entry"=>{"hours"=>"56", "minutes"=>"30", "date"=>"1-12-2015"}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered entries/new.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: 
+    2: <%= form_for [@project, @entry] do |f| %>
+    3: 	<%= f.label :hours %>
+    4: 	<%= f.text_field :hours %>
+    5: 	<br>
+  app/views/entries/new.html.erb:2:in `_app_views_entries_new_html_erb__2718196556079166611_69850614172860'
+  app/controllers/entries_controller.rb:26:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (35.3ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:59:25 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"30V/4NRRf9Q4D2zCX+7vK2XPqYiefR1L2M0QrTpWgT1meCScHB/sNtuZ99hEofxLcazNjj88OX4osdZMgnz++w==", "entry"=>{"hours"=>"56", "minutes"=>"30", "date"=>"1-12-2015"}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 82ms (Views: 46.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:59:26 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:59:26 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 14:59:26 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 14:59:26 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 14:59:26 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 14:59:26 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:59:26 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:59:26 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 14:59:26 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 14:59:26 +0100
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:59:29 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JslwbLEpJ7r7nfT5WVWDFEX9tqgEGkaM3Ey29Pjlo7if9CsQeWe0WBgLb+NCGpB0UZ7SrqVbYrksMHAVQM/cfg==", "entry"=>{"hours"=>"56", "minutes"=>"30", "date"=>"1-12-2015"}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered entries/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 56ms (Views: 48.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:59:32 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3BrUH7UigI4IrRz+p3N/ZJJJC+xNQQnuQRu0eHVq8p9lJ49jfWwTbOs7h+S8PGwEhipv6uwALduxZ3KZzUCNWQ==", "entry"=>{"hours"=>"56", "minutes"=>"30", "date"=>"1-12-2015"}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 111ms (Views: 105.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:59:39 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+JFThaT4WqhjHbuBmX25YDITMBkHy7T6JLgGZFkQaqdBrAj5bLbJSoCLIJuCMqoAJnBUH6aKkM/UxMCF4ToVYQ==", "entry"=>{"hours"=>"56", "minutes"=>"12", "date"=>"1-12-2015"}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered entries/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 60ms (Views: 50.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 14:59:53 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dr2ptKVkZLdUnDYywesvoLD0+6kowL6ibUuxt+MSFyO3gPLIbSr3VbcKrSjapDzApJefr4mBmpedN3dWWzho5Q==", "entry"=>{"hours"=>"56", "minutes"=>"12", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 51ms (Views: 44.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 15:00:01 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aquVtUNLcakuMYnsS3yckPatKhzU91DPdyf/TBowBgPTls7JiwXiS82nEvZQM4/w4s5OGnW2dPqHWzmtohp5xQ==", "entry"=>{"hours"=>"12", "minutes"=>"1", "date"=>""}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered entries/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 59ms (Views: 50.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 15:00:22 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IwzCqH6/LB7tyvXDaZtVg1u3AonRm1zq4VOEZ5a1f1OaMZnUtvG//A5cbtly1EbjT9Rmj3DaeN8RL0KGLp8AlQ==", "entry"=>{"hours"=>"12", "minutes"=>"1", "date"=>"01-01-2013"}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 49ms (Views: 43.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/6/entries/new" for 127.0.0.1 at 2015-11-18 15:00:55 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered entries/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 150ms (Views: 42.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 15:01:06 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jCa3oKISuhSTn51fdg4BDTdb+zt6uMtfknGhb56te7A1G+zcalwp9nAJBkVtQRJtIzifPdv572piDWeOJocEdg==", "entry"=>{"hours"=>"2", "minutes"=>"1", "date"=>"01-01-2013"}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 55ms (Views: 47.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 15:03:18 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iTwsxONU5T3N7f2qb+yrYGcds64Z8bxMRr4MlkcULzowAXe4Kxp23y57ZrB0o7gAc37XqLiwmHm2wsp3/z5Q/A==", "entry"=>{"hours"=>"2", "minutes"=>"1", "date"=>"01-01-2013"}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered entries/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 53ms (Views: 48.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 15:04:10 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iTwsxONU5T3N7f2qb+yrYGcds64Z8bxMRr4MlkcULzowAXe4Kxp23y57ZrB0o7gAc37XqLiwmHm2wsp3/z5Q/A==", "entry"=>{"hours"=>"2", "minutes"=>"1", "date"=>"01-01-2013"}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (77.1ms)[0m  [1mINSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["hours", 2], ["minutes", 1], ["date", "2013-01-01 00:00:00.000000"], ["project_id", 6], ["created_at", "2015-11-18 14:04:10.073201"], ["updated_at", "2015-11-18 14:04:10.073201"]]
+  [1m[35m (136.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/6/entries
+Completed 302 Found in 250ms (ActiveRecord: 214.6ms)
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 15:04:10 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 6]]
+  Rendered entries/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 49ms (Views: 44.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:04:10 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:04:10 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:10 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:04:10 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 15:04:10 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:10 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:10 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:10 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:10 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:10 +0100
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 15:04:13 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 6]]
+  Rendered entries/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 50ms (Views: 46.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:04:13 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 15:04:13 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:13 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:13 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:04:13 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:04:13 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:13 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:13 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:13 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:13 +0100
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 15:04:45 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 6]]
+  Rendered entries/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 58ms (Views: 52.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:04:45 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:04:45 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:04:45 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:45 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:45 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 15:04:45 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:45 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:45 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:45 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 15:04:45 +0100
+
+
+Started GET "/projects/6/entries/new" for 127.0.0.1 at 2015-11-18 15:04:50 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered entries/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 49ms (Views: 45.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projects/6/entries/new" for 127.0.0.1 at 2015-11-18 15:04:51 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered entries/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 52ms (Views: 48.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects/6/entries" for 127.0.0.1 at 2015-11-18 15:04:58 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E/qfn5ktlQ5EnQbYScKVu48RVv46Iw1vEZE4dSXfXJGqx8TjUWMG7KcLncJSjYbbm3Iy+JtiKVrh7f6UnfUjVw==", "entry"=>{"hours"=>"1", "minutes"=>"2", "date"=>"01-01-2013"}, "commit"=>"Save", "project_id"=>"6"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 1], ["minutes", 2], ["date", "2013-01-01 00:00:00.000000"], ["project_id", 6], ["created_at", "2015-11-18 14:04:58.090026"], ["updated_at", "2015-11-18 14:04:58.090026"]]
+  [1m[36m (216.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/6/entries
+Completed 302 Found in 228ms (ActiveRecord: 217.5ms)
+
+
+Started GET "/projects/6/entries" for 127.0.0.1 at 2015-11-18 15:04:58 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 6]]
+  Rendered entries/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 114ms (Views: 111.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2015-11-18 15:05:33 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "projects" LIMIT 10) subquery_for_count[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY created_at DESC LIMIT 10
+  Rendered projects/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 47ms (Views: 42.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2015-11-18 15:05:34 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "projects" LIMIT 10) subquery_for_count[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY created_at DESC LIMIT 10
+  Rendered projects/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/index" for 127.0.0.1 at 2015-11-18 15:05:39 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 0]]
+Tried to access {"controller"=>"projects", "action"=>"show", "id"=>"index"} which did not exist.
+  Rendered layouts/404.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 80ms (Views: 77.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2015-11-18 15:08:07 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered projects/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 120ms (Views: 106.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/5/new" for 127.0.0.1 at 2015-11-18 15:08:14 +0100
+
+ActionController::RoutingError (No route matches [GET] "/projects/5/new"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (94.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (155.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.9ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2015-11-18 15:08:51 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered projects/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:08:58 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 5]]
+  Rendered entries/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 85ms (Views: 51.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/5/entries/new" for 127.0.0.1 at 2015-11-18 15:09:07 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered entries/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:09:14 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AqBkAoNhLdXA+OfYkeN4y6fHVha/oqqn1+//ufYyN7W7nT9+Sy++NyNufMKKrGurs6QyEB7jjpInkzlYThhIcw==", "entry"=>{"hours"=>"1", "minutes"=>"5", "date"=>""}, "commit"=>"Save", "project_id"=>"5"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered entries/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 64ms (Views: 56.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:09:23 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZS+jVCzXNMrbh1lWhyIWNfp7sRT1FzH538uCb4j73bTcEvgo5JmnKDgRwkycbQVV7hjVElRWFcwvt0SOMNGicg==", "entry"=>{"hours"=>"1", "minutes"=>"5", "date"=>"01-01-2015"}, "commit"=>"Save", "project_id"=>"5"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["hours", 1], ["minutes", 5], ["date", "2015-01-01 00:00:00.000000"], ["project_id", 5], ["created_at", "2015-11-18 14:09:23.886152"], ["updated_at", "2015-11-18 14:09:23.886152"]]
+  [1m[35m (223.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/5/entries
+Completed 302 Found in 231ms (ActiveRecord: 223.8ms)
+
+
+Started GET "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:09:24 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 5]]
+  Rendered entries/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 53ms (Views: 49.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:09:31 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 5]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 5]]
+  Rendered entries/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 54ms (Views: 48.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:09:32 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:09:32 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:09:32 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 15:09:32 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:09:32 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 15:09:32 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 15:09:32 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:09:32 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:09:32 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 15:09:32 +0100
+
+
+Started GET "/projects/5/entries/new" for 127.0.0.1 at 2015-11-18 15:09:37 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered entries/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 58ms (Views: 53.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:09:45 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7jA52Oo0S6jjDvRS417N7lDKofdWKQw/Gg3MwrwO2pdXDWKkInrYSgCYb0j4Ed6ORKnF8fdoKArqcQojBCSlUQ==", "entry"=>{"hours"=>"10", "minutes"=>"20", "date"=>"01-01-2015"}, "commit"=>"Save", "project_id"=>"5"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 10], ["minutes", 20], ["date", "2015-01-01 00:00:00.000000"], ["project_id", 5], ["created_at", "2015-11-18 14:09:45.714495"], ["updated_at", "2015-11-18 14:09:45.714495"]]
+  [1m[36m (198.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/5/entries
+Completed 302 Found in 208ms (ActiveRecord: 199.5ms)
+
+
+Started GET "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:09:45 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 5]]
+  Rendered entries/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 50ms (Views: 46.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/5/entries/new" for 127.0.0.1 at 2015-11-18 15:10:30 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered entries/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 47ms (Views: 43.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:10:52 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sUc5RLkOeejSe0ym80itVRilBLVqQWLIzz9IeDDZFGoIemI4cUDqCjHt17zoB741DMZgs8sARv0/Q46ZiPNrrA==", "entry"=>{"hours"=>"10", "minutes"=>"10", "date"=>"17/11/2015"}, "commit"=>"Save", "project_id"=>"5"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 10], ["minutes", 10], ["date", "2015-11-17 00:00:00.000000"], ["project_id", 5], ["created_at", "2015-11-18 14:10:52.337991"], ["updated_at", "2015-11-18 14:10:52.337991"]]
+  [1m[36m (225.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/5/entries
+Completed 302 Found in 234ms (ActiveRecord: 226.4ms)
+
+
+Started GET "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:10:52 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 5]]
+  Rendered entries/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 45ms (Views: 42.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:11:42 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 5]]
+  Rendered entries/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 52ms (Views: 47.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:11:43 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:11:43 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:11:43 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 15:11:43 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 15:11:43 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:11:43 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 15:11:43 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:11:43 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:11:43 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 15:11:43 +0100
+
+
+Started GET "/projects/5/entries/new" for 127.0.0.1 at 2015-11-18 15:11:52 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered entries/new.html.erb within layouts/application (61.1ms)
+Completed 200 OK in 107ms (Views: 103.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:12:03 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2nYfFnoN+5PQwsXNgfinUnfJKlSrBjX5lWO0NhxZUrJjS0RqskNocTNUXteat7QyY6pOUgpHEcxlH3LXpHMtdA==", "entry"=>{"hours"=>"2", "minutes"=>"1", "date"=>"2015-11-16"}, "commit"=>"Save", "project_id"=>"5"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["hours", 2], ["minutes", 1], ["date", "2015-11-16 00:00:00.000000"], ["project_id", 5], ["created_at", "2015-11-18 14:12:03.682675"], ["updated_at", "2015-11-18 14:12:03.682675"]]
+  [1m[35m (246.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/5/entries
+Completed 302 Found in 258ms (ActiveRecord: 247.6ms)
+
+
+Started GET "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:12:04 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 5]]
+  Rendered entries/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 50ms (Views: 46.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:12:53 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 5]]
+  Rendered entries/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 79ms (Views: 46.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:12:54 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:12:54 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:12:54 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 15:12:54 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 15:12:54 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 15:12:54 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:12:54 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:12:54 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:12:54 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 15:12:54 +0100
+
+
+Started GET "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:13:02 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 5]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 5]]
+  Rendered entries/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 79ms (Views: 47.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:13:02 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:13:02 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:13:02 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 15:13:02 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 15:13:02 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:13:02 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 15:13:02 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:13:02 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:13:02 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 15:13:02 +0100
+
+
+Started GET "/projects/5/entries/new" for 127.0.0.1 at 2015-11-18 15:13:35 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered entries/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 48ms (Views: 42.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects/5/entries/new" for 127.0.0.1 at 2015-11-18 15:13:36 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered entries/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 114ms (Views: 109.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:13:40 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pSIrKo7UhDJ/7nBY4wCGmxg/iGVza/wvGk6ihgH+ZkgcH3BWRpoX0Jx460L4T5X7DFzsY9Iq2BrqMmRnudQZjg==", "entry"=>{"hours"=>"1", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"5"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered entries/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 58ms (Views: 48.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:14:45 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tjA0WIkG/rgNEZnfDCdr4DCsBFNOaSkkuQRNzjiXUFAPDW8kQUhtWu6HAsUXaHiAJM9gVe8oDRFJeIsvgL0vlg==", "entry"=>{"hours"=>"sdf", "minutes"=>"df", "date"=>""}, "commit"=>"Save", "project_id"=>"5"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 64ms (Views: 50.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:27:35 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tjA0WIkG/rgNEZnfDCdr4DCsBFNOaSkkuQRNzjiXUFAPDW8kQUhtWu6HAsUXaHiAJM9gVe8oDRFJeIsvgL0vlg==", "entry"=>{"hours"=>"sdf", "minutes"=>"df", "date"=>""}, "commit"=>"Save", "project_id"=>"5"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered entries/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 60ms (Views: 48.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:27:36 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:27:36 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:27:36 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 15:27:36 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 15:27:36 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 15:27:36 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:27:36 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:27:36 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:27:36 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 15:27:36 +0100
+
+
+Started POST "/projects/5/entries" for 127.0.0.1 at 2015-11-18 15:27:58 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tjA0WIkG/rgNEZnfDCdr4DCsBFNOaSkkuQRNzjiXUFAPDW8kQUhtWu6HAsUXaHiAJM9gVe8oDRFJeIsvgL0vlg==", "entry"=>{"hours"=>"sdf", "minutes"=>"df", "date"=>""}, "commit"=>"Save", "project_id"=>"5"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 68ms (Views: 56.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:27:58 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:27:58 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-18 15:27:58 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-18 15:27:58 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-18 15:27:58 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-18 15:27:58 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:27:58 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:27:58 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-18 15:27:58 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-18 15:27:58 +0100

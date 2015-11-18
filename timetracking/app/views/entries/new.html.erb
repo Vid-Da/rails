@@ -1,0 +1,26 @@
+
+<% if @entry.errors.any? %>
+  <b>Problems to make this happen:</b>
+   <ul>
+	   <% @entry.errors.full_messages.each do |msg| %>
+	     <li><%= msg %></li>
+	   <% end %>
+   </ul>
+<% end %>
+
+<div>
+	<%= form_for [@project, @entry] do |f| %>
+		<%= f.label :hours %>
+		<%= f.text_field :hours %>
+		<br>
+		<%= f.label :minutes %>
+		<%= f.text_field :minutes %>
+		<br>
+		<%= f.label :date %>
+		<%= f.date_field :date %>
+		<br>
+
+		<%= f.submit 'Save' %>
+
+	<% end %>
+</div>
