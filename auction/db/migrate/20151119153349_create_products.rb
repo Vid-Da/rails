@@ -4,6 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.date :deadline
+      t.integer :user_id
 
       t.timestamps null: false
     end

@@ -1,0 +1,28 @@
+<%= flash_message %>
+<h1>Hi! You can create your product here: </h1>
+
+<% if @products.errors.any? %>
+  <b>Problems to make this happen:</b>
+   <ul>
+	   <% @products.errors.full_messages.each do |msg| %>
+	     <li><%= msg %></li>
+	   <% end %>
+   </ul>
+<% end %>
+
+<div>
+	<%= form_for [@product] do |product| %>
+		<%= product.label :title %>
+		<%= product.text_field :title %>
+		<br>
+		<%= product.label :description %>
+		<%= product.text_field :description %>
+		<br>
+		<%= product.label :deadline %>
+		<%= product.date_field :deadline %>
+		<br>
+
+		<%= product.submit 'Save' %>
+	<% end %>
+
+
