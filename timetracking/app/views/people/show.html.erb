@@ -1,0 +1,15 @@
+
+<h1><%=@person.name%></h1>
+
+<h1>Projects</h1>
+	
+	<ul>
+			<% @person.projects.each do |project| %>
+				<li><%= project.name %></li>
+			<% end %>
+	</ul>
+
+<%= form_for [@person] do |f| %>
+	<%= f.collection_select(:projects, @projects_no_associated, :id, :name) %>
+	<%= f.submit 'Save' %>
+<% end %>

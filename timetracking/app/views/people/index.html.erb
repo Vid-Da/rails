@@ -1,0 +1,11 @@
+<p><%= flash_message %></p>
+
+<h1> Here your people</h1>
+
+	<ul>
+		<% @people.each do |person| %>
+			<li>
+				<%= link_to(person.name, person_path(person)) %>
+			</li>
+		<% end %>
+	</ul>

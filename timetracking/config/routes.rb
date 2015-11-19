@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :entries, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 
+  resources :people, only: [:new, :create, :index, :show, :update]
 ## lo anterior equivale a todo esto y mas
   # get "/contact" => "site#contact"
   # get "/projects" => "projects#index"
