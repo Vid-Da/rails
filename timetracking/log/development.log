@@ -9148,3 +9148,2167 @@ Processing by EntriesController#index as HTML
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 21]]
   Rendered entries/index.html.erb within layouts/application (1.0ms)
 Completed 200 OK in 66ms (Views: 63.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/22" for 127.0.0.1 at 2015-11-19 09:37:31 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  Rendered projects/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 538ms (Views: 468.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:37:37 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 22]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 22]]
+  Rendered entries/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 169ms (Views: 66.3ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/projects/22/entries/22" for 127.0.0.1 at 2015-11-19 09:37:41 +0100
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nIWxU0HwUJroN7hqabymAqFQGPhYnyrgxGfJgZi5PRFgfzQ4Eo2i+fuP7QOn2xw9JjaJP8bBIzlSsebTEHkvEw==", "project_id"=>"22", "id"=>"22"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1[0m  [["project_id", 22], ["id", 22]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "entries" WHERE "entries"."id" = ?[0m  [["id", 22]]
+  [1m[35m (128.3ms)[0m  commit transaction
+Redirected to http://localhost:3000index
+Completed 302 Found in 134ms (ActiveRecord: 129.0ms)
+
+
+Started DELETE "/projects/22/entries/22" for 127.0.0.1 at 2015-11-19 09:37:41 +0100
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nIWxU0HwUJroN7hqabymAqFQGPhYnyrgxGfJgZi5PRFgfzQ4Eo2i+fuP7QOn2xw9JjaJP8bBIzlSsebTEHkvEw==", "project_id"=>"22", "id"=>"22"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1  [["project_id", 22], ["id", 22]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Entry with 'id'=22 [WHERE "entries"."project_id" = ?]):
+  app/controllers/entries_controller.rb:46:in `destroy'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.4ms)
+
+
+Started DELETE "/projects/22/entries/22" for 127.0.0.1 at 2015-11-19 09:37:57 +0100
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nIWxU0HwUJroN7hqabymAqFQGPhYnyrgxGfJgZi5PRFgfzQ4Eo2i+fuP7QOn2xw9JjaJP8bBIzlSsebTEHkvEw==", "project_id"=>"22", "id"=>"22"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1  [["project_id", 22], ["id", 22]]
+Completed 404 Not Found in 24ms (ActiveRecord: 2.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Entry with 'id'=22 [WHERE "entries"."project_id" = ?]):
+  app/controllers/entries_controller.rb:46:in `destroy'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.6ms)
+
+
+Started GET "/projects/22" for 127.0.0.1 at 2015-11-19 09:38:00 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  Rendered projects/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 132ms (Views: 128.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:38:04 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 22]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 22]]
+  Rendered entries/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 68ms (Views: 64.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects/22/entries/new" for 127.0.0.1 at 2015-11-19 09:38:06 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  Rendered entries/new.html.erb within layouts/application (163.3ms)
+Completed 200 OK in 253ms (Views: 233.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:38:11 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6UvCDyk6bSXVw2Sgo3KklfuE9zsGzOFNGO5LYlt0rzoVsUdkekefRsZ7McltFR6qfOJm/JiS6JSOOGQw07S9OA==", "entry"=>{"hours"=>"1", "minutes"=>"2", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"22"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 1], ["minutes", 2], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 22], ["created_at", "2015-11-19 08:38:11.878638"], ["updated_at", "2015-11-19 08:38:11.878638"]]
+  [1m[36m (227.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/22/entries
+Completed 302 Found in 234ms (ActiveRecord: 227.6ms)
+
+
+Started GET "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:38:12 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 22]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 22]]
+  Rendered entries/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 70ms (Views: 65.9ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/projects/22/entries/48" for 127.0.0.1 at 2015-11-19 09:38:14 +0100
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"22eJ3jdQaeM2VbSxO4Q4PYUu2NQCdEj8Z/2s2owU3AUnnQy1ZC2bgCXt4dj144ICAkhJE5wqQSXxK4OIBNTOBw==", "project_id"=>"22", "id"=>"48"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1  [["project_id", 22], ["id", 48]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "entries" WHERE "entries"."id" = ?  [["id", 48]]
+  [1m[36m (160.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/22/entries
+Completed 302 Found in 168ms (ActiveRecord: 161.2ms)
+
+
+Started GET "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:38:14 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 22]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 22]]
+  Rendered entries/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 68ms (Views: 64.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/22/entries/new" for 127.0.0.1 at 2015-11-19 09:42:11 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  Rendered entries/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 105ms (Views: 69.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:42:17 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bkX43Sogy8McyBqdyxtXU5FsVtdsNJH2Td80HNXGHguSv322eV05oA9wT/QFfO1sFgrHEPJqmC/bCRtOXQYMCQ==", "entry"=>{"hours"=>"1", "minutes"=>"2", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"22"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 1], ["minutes", 2], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 22], ["created_at", "2015-11-19 08:42:17.716598"], ["updated_at", "2015-11-19 08:42:17.716598"]]
+  [1m[36m (229.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/22/entries
+Completed 302 Found in 239ms (ActiveRecord: 230.3ms)
+
+
+Started GET "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:42:17 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 22]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 22]]
+  Rendered entries/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 69ms (Views: 65.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects/22/entries/new" for 127.0.0.1 at 2015-11-19 09:42:49 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  Rendered entries/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 171ms (Views: 69.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects/22/entries/new" for 127.0.0.1 at 2015-11-19 09:44:05 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  Rendered entries/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 74ms (Views: 70.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 09:44:06 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 09:44:06 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 09:44:06 +0100
+
+
+Started GET "/assets/application.self-b46056816d8d514478f26d1c2d1cc5be0a38b59d89f793347b10d75f9b8ab4e2.css?body=1" for 127.0.0.1 at 2015-11-19 09:44:06 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-19 09:44:06 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-19 09:44:06 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 09:44:06 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 09:44:06 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 09:44:06 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-19 09:44:06 +0100
+
+
+Started POST "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:44:15 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SpWOtPT2c0qE+j/O7c6OaGLyT+jbTTA0YjUijFu1JcC2bwvfp4uBKZdCaqcjqTRX5ZTeL0UTOe304w3e03U3wg==", "entry"=>{"hours"=>"2", "minutes"=>"0", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"22"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["hours", 2], ["minutes", 0], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 22], ["created_at", "2015-11-19 08:44:15.074224"], ["updated_at", "2015-11-19 08:44:15.074224"]]
+  [1m[35m (225.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/22/entries
+Completed 302 Found in 234ms (ActiveRecord: 225.8ms)
+
+
+Started GET "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:44:15 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 22]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 22]]
+  Rendered entries/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 71ms (Views: 67.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects/22/entries/new" for 127.0.0.1 at 2015-11-19 09:44:41 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  Rendered entries/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 137ms (Views: 133.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:44:48 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+1y1WiQrL5/DL1VmI6M2YI+Seohbva58zeVb3Thbs3AHpjAxd1bd/NCXAA/txIxfCPTrT8Xjp6VbM3SPsJuhcg==", "entry"=>{"hours"=>"1", "minutes"=>"2", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"22"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["hours", 1], ["minutes", 2], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 22], ["created_at", "2015-11-19 08:44:48.093902"], ["updated_at", "2015-11-19 08:44:48.093902"]]
+  [1m[35m (228.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/22/entries
+Completed 302 Found in 240ms (ActiveRecord: 229.4ms)
+
+
+Started GET "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:44:48 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 22]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 22]]
+  Rendered entries/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 71ms (Views: 67.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:45:02 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 22]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 22]]
+  Rendered entries/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 77ms (Views: 70.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 09:45:02 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 09:45:02 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 09:45:02 +0100
+
+
+Started GET "/assets/application.self-b46056816d8d514478f26d1c2d1cc5be0a38b59d89f793347b10d75f9b8ab4e2.css?body=1" for 127.0.0.1 at 2015-11-19 09:45:02 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-19 09:45:02 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 09:45:02 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-19 09:45:02 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 09:45:02 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 09:45:02 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-19 09:45:02 +0100
+
+
+Started GET "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:45:11 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 22]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 22]]
+  Rendered entries/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 80ms (Views: 74.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 09:45:11 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 09:45:11 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 09:45:11 +0100
+
+
+Started GET "/assets/application.self-b46056816d8d514478f26d1c2d1cc5be0a38b59d89f793347b10d75f9b8ab4e2.css?body=1" for 127.0.0.1 at 2015-11-19 09:45:11 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-19 09:45:11 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-19 09:45:11 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 09:45:11 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 09:45:11 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 09:45:11 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-19 09:45:11 +0100
+
+
+Started GET "/projects/22/entries/new" for 127.0.0.1 at 2015-11-19 09:45:13 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  Rendered entries/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 69ms (Views: 65.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:45:20 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l7mWjWPrah6Nb3uLvi7ogHqnGtwrDCmjvMpnH1gIQfRrQxPmMJaYfZ7XLuJwSVK//cGLG7VSIHoqHEhN0MhT9g==", "entry"=>{"hours"=>"1", "minutes"=>"2", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"22"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["hours", 1], ["minutes", 2], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 22], ["created_at", "2015-11-19 08:45:20.705472"], ["updated_at", "2015-11-19 08:45:20.705472"]]
+  [1m[35m (232.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/22/entries
+Completed 302 Found in 242ms (ActiveRecord: 233.4ms)
+
+
+Started GET "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:45:20 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 22]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 22]]
+  Rendered entries/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 137ms (Views: 134.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/22/entries/new" for 127.0.0.1 at 2015-11-19 09:46:03 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  Rendered entries/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 68ms (Views: 65.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:46:08 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wm+a7MpLeJX3LFFrHGgPRmdRBW8TA78K8wRGq6qfMHI+lR+HmTaK9uSUBALSD7V54DeUqI1dttNl0mn5Il8icA==", "entry"=>{"hours"=>"1", "minutes"=>"2", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"22"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["hours", 1], ["minutes", 2], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 22], ["created_at", "2015-11-19 08:46:08.823765"], ["updated_at", "2015-11-19 08:46:08.823765"]]
+  [1m[35m (237.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/22/entries
+Completed 302 Found in 244ms (ActiveRecord: 237.5ms)
+
+
+Started GET "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:46:09 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 22]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 22]]
+  Rendered entries/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 72ms (Views: 67.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/projects/22/entries/49" for 127.0.0.1 at 2015-11-19 09:46:44 +0100
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"w53DOjO46uwLqJ6hSMgNCqIFuYeTIF0MggLJgnRwrQg/Z0ZRYMUYjxgQy8iGr7c1JWMoQA1+VNUU1ObQ/LC/Cg==", "project_id"=>"22", "id"=>"49"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1[0m  [["project_id", 22], ["id", 49]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "entries" WHERE "entries"."id" = ?[0m  [["id", 49]]
+  [1m[35m (111.6ms)[0m  commit transaction
+Redirected to http://localhost:3000index
+Completed 302 Found in 222ms (ActiveRecord: 113.7ms)
+
+
+Started GET "/projects/22/entries/49" for 127.0.0.1 at 2015-11-19 09:47:18 +0100
+
+ActionController::RoutingError (No route matches [GET] "/projects/22/entries/49"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.7ms)
+
+
+Started GET "/projects/22/entries" for 127.0.0.1 at 2015-11-19 09:47:25 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"22"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 22]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 22]]
+  Rendered entries/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 163ms (Views: 127.4ms | ActiveRecord: 1.9ms)
+
+
+Started DELETE "/projects/22/entries/51" for 127.0.0.1 at 2015-11-19 09:47:28 +0100
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TNKEgHqFzMrnETneN7i+4S1pKVBpPKQlPubKoxNQ4bGwKAHrKfg+qfSpbLf53wTeqg+4l/dirfyoMOXxm5Dzsw==", "project_id"=>"22", "id"=>"51"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1[0m  [["project_id", 22], ["id", 51]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "entries" WHERE "entries"."id" = ?[0m  [["id", 51]]
+  [1m[35m (136.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/index
+Completed 302 Found in 144ms (ActiveRecord: 137.5ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2015-11-19 09:47:28 +0100
+
+ActionController::RoutingError (No route matches [GET] "/index"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (35.4ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2015-11-19 09:48:51 +0100
+
+ActionController::RoutingError (No route matches [GET] "/index"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (35.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2015-11-19 09:48:54 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "projects" LIMIT 10) subquery_for_count[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY created_at DESC LIMIT 10
+  Rendered projects/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 154ms (Views: 73.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects/21/entries" for 127.0.0.1 at 2015-11-19 09:48:57 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 21]]
+  Rendered entries/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 73ms (Views: 64.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/21/entries/new" for 127.0.0.1 at 2015-11-19 09:48:58 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  Rendered entries/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 81ms (Views: 66.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects/21/entries" for 127.0.0.1 at 2015-11-19 09:49:04 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rAmmL4YrRLh7wBPDA762Ejku8IQThmSLwdzZIoKa5KlQ8yNE1Va222h4RqrN2QwtvkhhQ43YbVJXCvZwClr2qw==", "entry"=>{"hours"=>"1", "minutes"=>"2", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"21"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["hours", 1], ["minutes", 2], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 21], ["created_at", "2015-11-19 08:49:04.439616"], ["updated_at", "2015-11-19 08:49:04.439616"]]
+  [1m[35m (232.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/21/entries
+Completed 302 Found in 243ms (ActiveRecord: 233.0ms)
+
+
+Started GET "/projects/21/entries" for 127.0.0.1 at 2015-11-19 09:49:04 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 21]]
+  Rendered entries/index.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 150ms (Views: 146.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/projects/21/entries/54" for 127.0.0.1 at 2015-11-19 09:49:07 +0100
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"34jhxzUU1WYCk10dlWGZyhPSBeiWAOs7RET/y0H4YBUjcmSsZmknBRErCHRbBiP1lLSULwhe4uLSktCZyThyFw==", "project_id"=>"21", "id"=>"54"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1[0m  [["project_id", 21], ["id", 54]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "entries" WHERE "entries"."id" = ?[0m  [["id", 54]]
+  [1m[35m (133.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/21/entries
+Completed 302 Found in 140ms (ActiveRecord: 134.0ms)
+
+
+Started GET "/projects/21/entries" for 127.0.0.1 at 2015-11-19 09:49:07 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 21]]
+  Rendered entries/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 68ms (Views: 65.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/21/entries/new" for 127.0.0.1 at 2015-11-19 09:55:06 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  Rendered entries/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 161ms (Views: 131.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/projects/21/entries" for 127.0.0.1 at 2015-11-19 09:55:13 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"20nzAGF9whyyRlW0KPEiCKj45eHWnD0eklToQEMVFqEns3ZrMgAwf6H+AN3mlpg3L550JkjCNMcEgscSy9UEow==", "entry"=>{"hours"=>"sd", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"21"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 102ms (Views: 66.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:03:23 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 21]]
+  Rendered entries/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 154ms (Views: 70.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects/21/entries/new" for 127.0.0.1 at 2015-11-19 10:03:25 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  Rendered entries/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 78ms (Views: 64.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:03:32 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gHmcAcZ/mE6fvPowD7LOIwYUWssjyYAP49D/+ZuDauV8gxlqlQJqLYwEr1nB1XQcgXLLDL2XidZ1BtCrE0N45w==", "entry"=>{"hours"=>"1", "minutes"=>"2", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"21"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 1], ["minutes", 2], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 21], ["created_at", "2015-11-19 09:03:32.615626"], ["updated_at", "2015-11-19 09:03:32.615626"]]
+  [1m[36m (966.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/21/entries
+Completed 302 Found in 973ms (ActiveRecord: 967.0ms)
+
+
+Started GET "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:03:33 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 21]]
+  Rendered entries/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 93ms (Views: 89.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/projects/21/entries/55" for 127.0.0.1 at 2015-11-19 10:03:37 +0100
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nZi4ow6Q3MNeKPKQjCK4WmVikVZz2pP80NJ9u0A5DAlhYj3IXe0uoE2Qp/lCRQJl4gQAke2EmiVGBFLpyPkeCw==", "project_id"=>"21", "id"=>"55"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1  [["project_id", 21], ["id", 55]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "entries" WHERE "entries"."id" = ?  [["id", 55]]
+  [1m[36m (136.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/21/entries
+Completed 302 Found in 141ms (ActiveRecord: 137.1ms)
+
+
+Started GET "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:03:37 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 21]]
+  Rendered entries/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 131ms (Views: 128.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projects/21/entries/new" for 127.0.0.1 at 2015-11-19 10:03:45 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  Rendered entries/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 67ms (Views: 63.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:03:48 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KL3soeIAU9+StCz4xYJDUwuNTfbzNtRggjijyGtp4mTUR2nKsX2hvIEMeZEL5flsjOvcMW1o3bkU7oya46nwZg==", "entry"=>{"hours"=>"fsdf", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"21"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered entries/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 69ms (Views: 61.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:08:03 +0100
+
+SyntaxError (/home/cuquix/code/rails/timetracking/app/helpers/application_helper.rb:18: syntax error, unexpected $end, expecting keyword_end):
+  app/helpers/application_helper.rb:18: syntax error, unexpected $end, expecting keyword_end
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/entries_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.7ms)
+
+
+Started GET "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:08:19 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 21]]
+  Rendered entries/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 80ms (Views: 60.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 10:08:20 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 10:08:20 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 10:08:20 +0100
+
+
+Started GET "/assets/application.self-b46056816d8d514478f26d1c2d1cc5be0a38b59d89f793347b10d75f9b8ab4e2.css?body=1" for 127.0.0.1 at 2015-11-19 10:08:20 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-19 10:08:20 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-19 10:08:20 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 10:08:20 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 10:08:20 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 10:08:20 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-19 10:08:20 +0100
+
+
+Started GET "/projects/21/entries/new" for 127.0.0.1 at 2015-11-19 10:08:21 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  Rendered entries/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 82ms (Views: 61.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:08:28 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aaoGNWSR7fsqUDyaAgrhaE+/3JNqCZjvsrw2NDBSvJOVUINeN+wfmDnoafPMbVtXyNlNVPRXkTYkahlmuJKukQ==", "entry"=>{"hours"=>"10", "minutes"=>"2", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"21"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["hours", 10], ["minutes", 2], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 21], ["created_at", "2015-11-19 09:08:28.815041"], ["updated_at", "2015-11-19 09:08:28.815041"]]
+  [1m[35m (219.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/21/entries
+Completed 302 Found in 226ms (ActiveRecord: 220.0ms)
+
+
+Started GET "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:08:29 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 21]]
+  Rendered entries/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 63ms (Views: 59.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/projects/21/entries/56" for 127.0.0.1 at 2015-11-19 10:08:33 +0100
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"v/v5oQJsJ9gKxD1UAL1kiTvis7R6tOZ1ksMvuS9VHWBDAXzKURHVuxl8aD3O2t62vIQic+Tq76wEFQDrp5UPYg==", "project_id"=>"21", "id"=>"56"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1[0m  [["project_id", 21], ["id", 56]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "entries" WHERE "entries"."id" = ?[0m  [["id", 56]]
+  [1m[35m (220.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/21/entries
+Completed 302 Found in 229ms (ActiveRecord: 221.5ms)
+
+
+Started GET "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:08:33 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 21]]
+  Rendered entries/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 127ms (Views: 125.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projects/21/entries/new" for 127.0.0.1 at 2015-11-19 10:08:37 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  Rendered entries/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 66ms (Views: 63.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:08:39 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YdI6aNrub9jvHN4RYlz982h1vc9FJmr8LVhIolmsBsudKL8DiZOdu/yki3isO0fM7xMsCNt4YyW7jmfw0WwUyQ==", "entry"=>{"hours"=>"sads", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"21"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 70ms (Views: 61.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:09:22 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YdI6aNrub9jvHN4RYlz982h1vc9FJmr8LVhIolmsBsudKL8DiZOdu/yki3isO0fM7xMsCNt4YyW7jmfw0WwUyQ==", "entry"=>{"hours"=>"sads", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"21"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered entries/new.html.erb within layouts/application (98.8ms)
+Completed 200 OK in 775ms (Views: 524.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 10:09:24 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 10:09:24 +0100
+
+
+Started GET "/assets/application.self-b46056816d8d514478f26d1c2d1cc5be0a38b59d89f793347b10d75f9b8ab4e2.css?body=1" for 127.0.0.1 at 2015-11-19 10:09:24 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 10:09:24 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-19 10:09:24 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-19 10:09:24 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 10:09:24 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 10:09:24 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 10:09:24 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-19 10:09:24 +0100
+
+
+Started POST "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:10:20 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YdI6aNrub9jvHN4RYlz982h1vc9FJmr8LVhIolmsBsudKL8DiZOdu/yki3isO0fM7xMsCNt4YyW7jmfw0WwUyQ==", "entry"=>{"hours"=>"sads", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"21"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 88ms (Views: 78.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 10:10:21 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 10:10:21 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 10:10:21 +0100
+
+
+Started GET "/assets/application.self-b46056816d8d514478f26d1c2d1cc5be0a38b59d89f793347b10d75f9b8ab4e2.css?body=1" for 127.0.0.1 at 2015-11-19 10:10:21 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-19 10:10:21 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-19 10:10:21 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 10:10:21 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 10:10:21 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 10:10:21 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-19 10:10:21 +0100
+
+
+Started GET "/projects/21" for 127.0.0.1 at 2015-11-19 10:19:52 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  Rendered projects/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 142ms (Views: 127.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:19:57 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 21]]
+  Rendered entries/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 84ms (Views: 75.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects/21/entries" for 127.0.0.1 at 2015-11-19 10:19:57 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"21"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 21]]
+  Rendered entries/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 70ms (Views: 66.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 10:20:02 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 82ms (Views: 66.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/25/entries/new" for 127.0.0.1 at 2015-11-19 10:20:06 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  Rendered entries/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 136ms (Views: 133.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/projects/25/entries" for 127.0.0.1 at 2015-11-19 10:20:12 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zBTfLAqGdP4SvMBV2IRuAx6VqJhbfaeVc6V8WZvyKhgw7lpHWfuGnQEElTwW49Q8mfM5X8Ujrkzlc1MLEzI4Gg==", "entry"=>{"hours"=>"1", "minutes"=>"2", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"25"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["hours", 1], ["minutes", 2], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 25], ["created_at", "2015-11-19 09:20:12.313953"], ["updated_at", "2015-11-19 09:20:12.313953"]]
+  [1m[35m (196.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/25/entries
+Completed 302 Found in 209ms (ActiveRecord: 197.8ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 10:20:12 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 64ms (Views: 61.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/projects/25/entries/25" for 127.0.0.1 at 2015-11-19 10:20:26 +0100
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HKzICzocgQLD1oa1gF9bmZUJmlTuW6K9MReMOjAkvLngVk1gaWFzYdBu09xOOOGmEm8Lk3AFq2SnwaNouOSuuw==", "project_id"=>"25", "id"=>"25"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1[0m  [["project_id", 25], ["id", 25]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "entries" WHERE "entries"."id" = ?[0m  [["id", 25]]
+  [1m[35m (134.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/25/entries
+Completed 302 Found in 141ms (ActiveRecord: 135.5ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 10:20:27 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 87ms (Views: 81.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects/25/entries/new" for 127.0.0.1 at 2015-11-19 10:20:29 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  Rendered entries/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 68ms (Views: 64.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects/25/entries" for 127.0.0.1 at 2015-11-19 10:20:31 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7fNhNyFqoGrbZnJGiU6TQ5K7LmFOmS8VlBpbVQ3smBQRCeRcchdSCcjeJy9HKSl8Fd2/ptDHJswCzHQHhSyKFg==", "entry"=>{"hours"=>"asdf", "minutes"=>"", "date"=>""}, "commit"=>"Save", "project_id"=>"25"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered entries/new.html.erb within layouts/application (80.1ms)
+Completed 200 OK in 153ms (Views: 145.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 10:44:19 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (74.6ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 1.4ms)
+
+ActionView::Template::Error (undefined local variable or method `date' for #<#<Class:0x007f6c9405c1b8>:0x007f6c9804d150>):
+    13: 			<% end %>
+    14: 	</ul>
+    15: 
+    16: <p>Total hours worked this month <%= hours_counter %></p>
+    17: <p>Total hours worked this month <%= @total_hours %></p>
+    18: 
+    19: 
+  app/helpers/application_helper.rb:4:in `hours_counter'
+  app/views/entries/index.html.erb:16:in `_app_views_entries_index_html_erb___2778624974152200609_70052191821220'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.1ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 10:47:09 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.0ms)
+
+NameError (undefined local variable or method `hours_counter' for #<EntriesController:0x007f6ca8296c30>):
+  app/controllers/entries_controller.rb:5:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.1ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 10:54:13 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `entries' for 25:Fixnum):
+  app/controllers/entries_controller.rb:6:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.7ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 10:55:04 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+NoMethodError (undefined method `entries' for 25:Fixnum):
+  app/controllers/entries_controller.rb:6:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (84.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.8ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 10:56:40 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `entries' for 25:Fixnum):
+  app/controllers/entries_controller.rb:6:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.6ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 10:56:42 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `entries' for 25:Fixnum):
+  app/controllers/entries_controller.rb:6:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.6ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 10:59:30 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `entries' for 25:Fixnum):
+  app/controllers/entries_controller.rb:6:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.5ms)
+
+
+Started GET "/projects/25" for 127.0.0.1 at 2015-11-19 10:59:34 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered projects/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 62ms (Views: 60.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 10:59:38 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `entries' for 25:Fixnum):
+  app/controllers/entries_controller.rb:6:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.2ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:00:13 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (24.3ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 2.1ms)
+
+ActionView::Template::Error (wrong number of arguments (2 for 1)):
+    13: 			<% end %>
+    14: 	</ul>
+    15: 
+    16: <p>Total hours worked this month: <%= hours_counter(@project, @date) %></p>
+    17: 
+    18: <!--<p>Total hours worked this month <%= @total_hours %></p>-->
+    19: 
+  app/helpers/application_helper.rb:3:in `hours_counter'
+  app/views/entries/index.html.erb:16:in `_app_views_entries_index_html_erb___2778624974152200609_70052226101040'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.3ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:00:25 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (14.7ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.4ms)
+
+ActionView::Template::Error (undefined method `month' for nil:NilClass):
+    13: 			<% end %>
+    14: 	</ul>
+    15: 
+    16: <p>Total hours worked this month: <%= hours_counter(@project, @date) %></p>
+    17: 
+    18: <!--<p>Total hours worked this month <%= @total_hours %></p>-->
+    19: 
+  app/helpers/application_helper.rb:4:in `hours_counter'
+  app/views/entries/index.html.erb:16:in `_app_views_entries_index_html_erb___2778624974152200609_70052226101040'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (71.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (89.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.8ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:00:33 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (undefined method `month' for nil:NilClass):
+    13: 			<% end %>
+    14: 	</ul>
+    15: 
+    16: <p>Total hours worked this month: <%= hours_counter(@project, @date) %></p>
+    17: 
+    18: <!--<p>Total hours worked this month <%= @total_hours %></p>-->
+    19: 
+  app/helpers/application_helper.rb:4:in `hours_counter'
+  app/views/entries/index.html.erb:16:in `_app_views_entries_index_html_erb___2778624974152200609_70052226101040'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.8ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:01:24 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `month' for nil:NilClass):
+    13: 			<% end %>
+    14: 	</ul>
+    15: 
+    16: <p>Total hours worked this month: <%= hours_counter(@project, @date) %></p>
+    17: 
+    18: <!--<p>Total hours worked this month <%= @total_hours %></p>-->
+    19: 
+  app/helpers/application_helper.rb:4:in `hours_counter'
+  app/views/entries/index.html.erb:16:in `_app_views_entries_index_html_erb___2778624974152200609_70052226101040'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.9ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:05:23 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (82.2ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 1.7ms)
+
+ActionView::Template::Error (undefined method `date' for #<Entry::ActiveRecord_AssociationRelation:0x007f6c9c4aefb0>):
+    13: 			<% end %>
+    14: 	</ul>
+    15: 
+    16: <p>Total hours worked this month: <%= hours_counter(@project, @entries.date) %></p>
+    17: 
+    18: <!--<p>Total hours worked this month <%= @total_hours %></p>-->
+    19: 
+  app/views/entries/index.html.erb:16:in `_app_views_entries_index_html_erb___2778624974152200609_70052227693200'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.0ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:05:53 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.1ms)
+
+NameError (undefined local variable or method `date' for #<EntriesController:0x007f6cada301d0>):
+  app/controllers/entries_controller.rb:6:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (76.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (93.4ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:05:54 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+NameError (undefined local variable or method `date' for #<EntriesController:0x007f6cad025000>):
+  app/controllers/entries_controller.rb:6:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.9ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:06:09 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 94ms (Views: 73.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:06:09 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:06:09 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:06:09 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-19 11:06:09 +0100
+
+
+Started GET "/assets/application.self-b46056816d8d514478f26d1c2d1cc5be0a38b59d89f793347b10d75f9b8ab4e2.css?body=1" for 127.0.0.1 at 2015-11-19 11:06:09 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-19 11:06:09 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:06:09 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:06:09 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:06:09 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-19 11:06:09 +0100
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:08:10 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 106ms (Views: 85.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:08:10 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:08:10 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:08:10 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-19 11:08:10 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-19 11:08:10 +0100
+
+
+Started GET "/assets/application.self-b46056816d8d514478f26d1c2d1cc5be0a38b59d89f793347b10d75f9b8ab4e2.css?body=1" for 127.0.0.1 at 2015-11-19 11:08:10 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:08:10 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:08:10 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:08:10 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-19 11:08:10 +0100
+
+
+Started GET "/projects/25/entries/new" for 127.0.0.1 at 2015-11-19 11:08:22 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered entries/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 69ms (Views: 64.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:08:32 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K94YBqawW4ZNnA4ycc7VaNze8/5olwPJf1Y2laWj+tPXJJ1t9c2p5V4kW1u/qW9XW7hiOfbJChDpgBnHLWPo0Q==", "entry"=>{"hours"=>"5", "minutes"=>"10000000", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"25"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 5], ["minutes", 10000000], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 25], ["created_at", "2015-11-19 10:08:32.158205"], ["updated_at", "2015-11-19 10:08:32.158205"]]
+  [1m[36m (317.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/25/entries
+Completed 302 Found in 325ms (ActiveRecord: 318.2ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:08:32 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 65ms (Views: 63.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:11:42 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 74ms (Views: 70.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects/26/entries" for 127.0.0.1 at 2015-11-19 11:11:47 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"26"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 26]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `entries' for nil:NilClass):
+  app/controllers/entries_controller.rb:6:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.9ms)
+
+
+Started GET "/projects/26" for 127.0.0.1 at 2015-11-19 11:12:21 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 26]]
+Tried to access {"controller"=>"projects", "action"=>"show", "id"=>"26"} which did not exist.
+  Rendered layouts/404.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 610ms (Views: 509.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/26/entries" for 127.0.0.1 at 2015-11-19 11:12:28 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"26"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 26]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+NoMethodError (undefined method `entries' for nil:NilClass):
+  app/controllers/entries_controller.rb:6:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (98.2ms)
+
+
+Started GET "/projects/26/entries" for 127.0.0.1 at 2015-11-19 11:19:11 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"26"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 26]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.9ms)
+
+NoMethodError (undefined method `entries' for nil:NilClass):
+  app/controllers/entries_controller.rb:6:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.6ms)
+
+
+Started GET "/projects/26/entries" for 127.0.0.1 at 2015-11-19 11:19:58 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"26"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 26]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `entries' for nil:NilClass):
+  app/controllers/entries_controller.rb:6:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (72.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (38.5ms)
+
+
+Started GET "/projects/28/entries" for 127.0.0.1 at 2015-11-19 11:20:02 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"28"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 28]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `entries' for nil:NilClass):
+  app/controllers/entries_controller.rb:6:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.5ms)
+
+
+Started GET "/projects/1/entries" for 127.0.0.1 at 2015-11-19 11:20:07 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 1]]
+  Rendered entries/index.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 312ms (Views: 145.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects/24/entries" for 127.0.0.1 at 2015-11-19 11:20:13 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"24"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 24]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 24]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 24]]
+  Rendered entries/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 72ms (Views: 69.2ms | ActiveRecord: 0.4ms)
+  [1m[36mProject Load (2.7ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects"  ORDER BY "projects"."id" DESC LIMIT 1
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:21:59 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (87.5ms)
+Completed 200 OK in 757ms (Views: 574.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:22:01 +0100
+
+
+Started GET "/assets/application.self-b46056816d8d514478f26d1c2d1cc5be0a38b59d89f793347b10d75f9b8ab4e2.css?body=1" for 127.0.0.1 at 2015-11-19 11:22:01 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:22:01 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:22:01 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-19 11:22:01 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-19 11:22:01 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:22:01 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:22:01 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-19 11:22:01 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:22:01 +0100
+
+
+Started GET "/projects/25/entries/57/edit" for 127.0.0.1 at 2015-11-19 11:22:04 +0100
+Processing by EntriesController#edit as HTML
+  Parameters: {"project_id"=>"25", "id"=>"57"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1  [["project_id", 25], ["id", 57]]
+  Rendered entries/edit.html.erb within layouts/application (108.9ms)
+Completed 200 OK in 247ms (Views: 241.5ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/projects/25/entries/57" for 127.0.0.1 at 2015-11-19 11:22:12 +0100
+Processing by EntriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+2yOPuIolT7WEa1mkVdBeaDUItw4prLds1s7pZMnjqIHlgtVsVVnXcWp+A9fMPtGJ7KzG6b4uwQljRT3G+ecoA==", "entry"=>{"hours"=>"0.2", "minutes"=>"63", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"25", "id"=>"57"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1  [["project_id", 25], ["id", 57]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  Rendered entries/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 86ms (Views: 77.4ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/projects/25/entries/57" for 127.0.0.1 at 2015-11-19 11:22:17 +0100
+Processing by EntriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xF9GVb0S2lJUP/Bdy2+aDWQivZo4x0MASaNdeoRNn4k4pcM+7m8oMUeHpTQFCCAy40QsXaaZStnfdXIoDI2Niw==", "entry"=>{"hours"=>"2", "minutes"=>"63", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"25", "id"=>"57"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1  [["project_id", 25], ["id", 57]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "entries" SET "hours" = ?, "minutes" = ?, "updated_at" = ? WHERE "entries"."id" = ?  [["hours", 2], ["minutes", 63], ["updated_at", "2015-11-19 10:22:17.935016"], ["id", 57]]
+  [1m[36m (210.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/25/entries
+Completed 302 Found in 221ms (ActiveRecord: 211.4ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:22:18 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 74ms (Views: 71.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/25/entries/new" for 127.0.0.1 at 2015-11-19 11:25:29 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered entries/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 143ms (Views: 139.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:25:35 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x8G1Gx9jG06uKKa4NdodDrNTVi2fW6BMN0jV49OYlR47OzBwTB7pLb2Q89H7vacxNDXH6gEFqZWhnvqxW1iHHA==", "entry"=>{"hours"=>"1", "minutes"=>"2", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"25"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 1], ["minutes", 2], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 25], ["created_at", "2015-11-19 10:25:35.381047"], ["updated_at", "2015-11-19 10:25:35.381047"]]
+  [1m[36m (239.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/25/entries
+Completed 302 Found in 252ms (ActiveRecord: 241.0ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:25:35 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 77ms (Views: 75.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:29:34 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 142ms (Views: 138.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:29:34 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:29:34 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:29:34 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-19 11:29:34 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-19 11:29:34 +0100
+
+
+Started GET "/assets/application.self-b46056816d8d514478f26d1c2d1cc5be0a38b59d89f793347b10d75f9b8ab4e2.css?body=1" for 127.0.0.1 at 2015-11-19 11:29:34 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:29:34 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:29:34 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-19 11:29:34 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:29:34 +0100
+
+
+Started GET "/projects/25/entries/new" for 127.0.0.1 at 2015-11-19 11:29:37 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  Rendered entries/new.html.erb within layouts/application (83.6ms)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00000005627b68>:0x007fe36065c5e8>):
+    1: <h2>Creating a new entre in <%= @project.name %></h2>
+    2: 
+    3: <%= render form %>
+  app/views/entries/new.html.erb:3:in `_app_views_entries_new_html_erb___164428040976540683_70307275790420'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (68.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (96.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (40.7ms)
+
+
+Started GET "/projects/25/entries/new" for 127.0.0.1 at 2015-11-19 11:29:56 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered entries/_form.html.erb (6.0ms)
+  Rendered entries/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 84ms (Views: 81.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:29:56 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-19 11:29:56 +0100
+
+
+Started GET "/assets/application.self-b46056816d8d514478f26d1c2d1cc5be0a38b59d89f793347b10d75f9b8ab4e2.css?body=1" for 127.0.0.1 at 2015-11-19 11:29:56 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:29:56 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-19 11:29:56 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:29:56 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:29:56 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:29:56 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:29:56 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-19 11:29:56 +0100
+
+
+Started POST "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:30:04 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dRmhW+ANhsXdJBzkweVNNek8Igdhn6YEP5kBRfsIgKmJ4yQws3B0ps6cSY0PgvcKblqzwP/Br92pTy4Xc8iSqw==", "entry"=>{"hours"=>"1", "minutes"=>"2", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"25"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 1], ["minutes", 2], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 25], ["created_at", "2015-11-19 10:30:04.920764"], ["updated_at", "2015-11-19 10:30:04.920764"]]
+  [1m[36m (295.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/25/entries
+Completed 302 Found in 303ms (ActiveRecord: 295.7ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:30:05 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 76ms (Views: 74.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/25/entries/new" for 127.0.0.1 at 2015-11-19 11:31:58 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered entries/_form.html.erb (3.7ms)
+  Rendered entries/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 73ms (Views: 70.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:32:06 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BViROFzlwjDw+cubb6UAFQQdEdZXmI4zntr3ljg0SUv5ohRTD5gwU+NBnvKhwroqg3uAEcnGh+oIDNjEsPRbSQ==", "entry"=>{"hours"=>"1", "minutes"=>"2", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"25"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["hours", 1], ["minutes", 2], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 25], ["created_at", "2015-11-19 10:32:06.532348"], ["updated_at", "2015-11-19 10:32:06.532348"]]
+  [1m[36m (202.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/25/entries
+Completed 302 Found in 212ms (ActiveRecord: 202.9ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:32:06 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 148ms (Views: 146.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:32:57 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 76ms (Views: 72.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:32:57 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:32:57 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-19 11:32:57 +0100
+
+
+Started GET "/assets/application.self-b46056816d8d514478f26d1c2d1cc5be0a38b59d89f793347b10d75f9b8ab4e2.css?body=1" for 127.0.0.1 at 2015-11-19 11:32:57 +0100
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-19 11:32:57 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-19 11:32:57 +0100
+
+
+Started GET "/assets/entries.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:32:57 +0100
+
+
+Started GET "/assets/projects.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:32:57 +0100
+
+
+Started GET "/assets/site.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 127.0.0.1 at 2015-11-19 11:32:57 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2015-11-19 11:32:57 +0100
+
+
+Started GET "/projects/25/entries/57/edit" for 127.0.0.1 at 2015-11-19 11:32:59 +0100
+Processing by EntriesController#edit as HTML
+  Parameters: {"project_id"=>"25", "id"=>"57"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1[0m  [["project_id", 25], ["id", 57]]
+  Rendered entries/_form.html.erb (74.0ms)
+  Rendered entries/edit.html.erb within layouts/application (75.3ms)
+Completed 200 OK in 146ms (Views: 140.5ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/projects/25/entries/57" for 127.0.0.1 at 2015-11-19 11:33:05 +0100
+Processing by EntriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QGS5K0wGKaeXeLMyDRpT5r4tXFlQ68UgglawTAV1zgy8njxAH3vbxITA5lvDfenZOUvNns61zPkUgJ8ejbXcDg==", "entry"=>{"hours"=>"2", "minutes"=>"0", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"25", "id"=>"57"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1[0m  [["project_id", 25], ["id", 57]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "entries" SET "minutes" = ?, "updated_at" = ? WHERE "entries"."id" = ?[0m  [["minutes", 0], ["updated_at", "2015-11-19 10:33:05.472300"], ["id", 57]]
+  [1m[35m (234.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/25/entries
+Completed 302 Found in 243ms (ActiveRecord: 234.8ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:33:05 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 71ms (Views: 69.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/25/entries/new" for 127.0.0.1 at 2015-11-19 11:33:10 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  Rendered entries/_form.html.erb (3.8ms)
+  Rendered entries/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 72ms (Views: 68.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:33:19 +0100
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6WEKGVqhiM9F8EKmzBANGdS8GTxiIiYPYh2KkWbyr9QVm49yCdx6rFZIF88Cd7cmU9qI+/x8L9b0y6XD7jK91g==", "entry"=>{"hours"=>"2", "minutes"=>"1", "date"=>"2015-11-19"}, "commit"=>"Save", "project_id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "entries" ("hours", "minutes", "date", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["hours", 2], ["minutes", 1], ["date", "2015-11-19 00:00:00.000000"], ["project_id", 25], ["created_at", "2015-11-19 10:33:19.747680"], ["updated_at", "2015-11-19 10:33:19.747680"]]
+  [1m[35m (233.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/25/entries
+Completed 302 Found in 243ms (ActiveRecord: 234.4ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:33:19 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 140ms (Views: 138.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects/25/entries/new" for 127.0.0.1 at 2015-11-19 11:34:22 +0100
+Processing by EntriesController#new as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  Rendered entries/_form.html.erb (4.6ms)
+  Rendered entries/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 80ms (Views: 75.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projects/25/entries" for 127.0.0.1 at 2015-11-19 11:34:46 +0100
+Processing by EntriesController#index as HTML
+  Parameters: {"project_id"=>"25"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')  [["project_id", 25]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND ("entries"."date" BETWEEN '2015-11-01' AND '2015-11-30')[0m  [["project_id", 25]]
+  Rendered entries/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 73ms (Views: 69.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/25/entries/57/edit" for 127.0.0.1 at 2015-11-19 11:34:48 +0100
+Processing by EntriesController#edit as HTML
+  Parameters: {"project_id"=>"25", "id"=>"57"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."project_id" = ? AND "entries"."id" = ? LIMIT 1[0m  [["project_id", 25], ["id", 57]]
+  Rendered entries/_form.html.erb (3.1ms)
+  Rendered entries/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 141ms (Views: 136.2ms | ActiveRecord: 0.4ms)

@@ -1,28 +1,4 @@
+<h2>Creating a new entry in: <%= @project.name %></h2>
+<%= flash_message %>
 
-<% if @entry.errors.any? %>
-  <b>Problems to make this happen:</b>
-   <ul>
-	   <% @entry.errors.full_messages.each do |msg| %>
-	     <li><%= msg %></li>
-	   <% end %>
-   </ul>
-<% end %>
-
-<div>
-	<%= form_for [@project, @entry] do |f| %>
-		<%= f.label :hours %>
-		<%= f.text_field :hours %>
-		<br>
-		<%= f.label :minutes %>
-		<%= f.text_field :minutes %>
-		<br>
-		<%= f.label :date %>
-		<%= f.date_field :date %>
-		<br>
-
-		<%= f.submit 'Save' %>
-	<% end %>
-
-	<p><%= link_to("Cancel", project_entries_path(@project)) %></p>
-
-</div>
+<%= render 'form' %>

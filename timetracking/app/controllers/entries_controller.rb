@@ -2,11 +2,9 @@ class EntriesController < ApplicationController
 
 	def index
 		@project = Project.find_by(id: params[:project_id])
-		
-		date = Date.current
-		@entries = @project.entries.where(date: date.beginning_of_month..date.end_of_month)
-
-		@total_hours = @project.total_hours_in_month(date.month, date.year)
+		@date = Date.current
+		@entries = @project.entries.where(date: @date.beginning_of_month.. @date.end_of_month)
+		#@total_hours = @project.total_hours_in_month(date.month, date.year)
 	end
 
 	def new
@@ -19,8 +17,10 @@ class EntriesController < ApplicationController
 		@entry = @project.entries.new(entry_params)
 
 		if @entry.save
+			flash[:notice] = "Entry created successfully"
 			redirect_to action: 'index', controller: 'entries', project_id: @project.id
 		else
+			flash[:alert] = "Sorry, something went wrong.."
 			render 'new'
 		end
 	end
@@ -47,6 +47,8 @@ class EntriesController < ApplicationController
 		
 		@entry.destroy
 		redirect_to action: 'index', controller: 'entries', project_id: @project
+			# other way to redirect:
+			# project_entries_path(@project)
 	end
 
 	private
