@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120083550) do
+ActiveRecord::Schema.define(version: 20151120120110) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "concert_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "concerts", force: :cascade do |t|
     t.string   "band"
@@ -19,7 +26,8 @@ ActiveRecord::Schema.define(version: 20151120083550) do
     t.string   "city"
     t.date     "date"
     t.integer  "price"
-    t.string   "description"
+    t.text     "description"
+    t.text     "comment"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

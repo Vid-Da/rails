@@ -7,6 +7,7 @@ class CreateConcerts < ActiveRecord::Migration
     	t.date :date
     	t.integer :price
     	t.text :description
+      t.text :comment
 
       t.timestamps null: false
     end

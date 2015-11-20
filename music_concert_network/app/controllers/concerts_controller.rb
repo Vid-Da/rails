@@ -24,12 +24,30 @@ class ConcertsController < ApplicationController
 
 	def show
 		@concert = Concert.find_by(id: params[:id])
+			@comment = @concert.comments.new
+		@comments = @concert.comments
+	end
+
+	def edit
+		@concert = Concert.find(params[:id])
+	end
+
+	def update
+		@concert = Concert.find(params[:id])
+
+		if @concert.update_attributes(concert_params)
+			flash[:notice] = 'Comment added successfully'
+			redirect_to action: 'show', controller: 'concerts', id: @concert.id
+		else
+			flash[:notice] = 'Sorry, something went wrong..'
+			render 'show'
+		end
 	end
 
 	private
 
 	def concert_params
-		params.require(:concert).permit(:band, :venue, :city, :date, :price, :description)
+		params.require(:concert).permit(:band, :venue, :city, :date, :price, :description, :comment)
 	end
 
 end

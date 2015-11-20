@@ -1,35 +1,38 @@
+
 <h2>Here the list of all the concerts! :</h2>
 
-<ul>
-	<% @concerts.each do |concert| %>
-		<li>
-			<%= link_to(concert.band, concert_path(concert)) %>
-		</li>
+<div class='concert_list'>
+	<ul>
+		<% @concerts.each do |concert| %>
+			<li>
+				<%= link_to(concert.band, concert_path(concert)) %>
+			</li>
 		<% end %>
-</ul>
+	</ul>
+</div>
 
 <p><%= link_to("Add concert", new_concert_path) %></p>
 
 <h2>What is happening today !! </h2>
 <div class='today'>
 	<ul>
-	<% @concerts_today.each do |concert| %>
-		<li>
-			<%= link_to(concert.band, concert_path(concert)) %>
-		</li>
+		<% @concerts_today.each do |concert| %>
+			<li>
+				<%= link_to(concert.band, concert_path(concert)) %>
+			</li>
 		<% end %>
-</ul>
+	</ul>
+</div>
 	
+
 <h2>Later this month</h2>
 <div class='month'>
 	<ul>
-	<% @concerts_month.each do |concert| %>
-		<li>
-			<%= link_to(concert.band, concert_path(concert)) %>
-		</li>
+		<% @concerts_month.each do |concert| %>
+			<li>
+				<%= link_to(concert.band, concert_path(concert)) %>
+			</li>
 		<% end %>
-</ul>
-
-
+	</ul>
 </div>
 
