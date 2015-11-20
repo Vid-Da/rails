@@ -2,9 +2,8 @@ class ConcertsController < ApplicationController
 
 	def index
 		@concerts = Concert.all
-			if @concerts.empty?
-				render 'no_concerts'
-			end
+		@concerts_today = @concerts.concerts_today
+		@concerts_month = @concerts.concerts_month
 	end
 
 	def new

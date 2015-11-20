@@ -1,4 +1,4 @@
-<h1>Here the list of concerts! :</h1>
+<h2>Here the list of all the concerts! :</h2>
 
 <ul>
 	<% @concerts.each do |concert| %>
@@ -9,3 +9,27 @@
 </ul>
 
 <p><%= link_to("Add concert", new_concert_path) %></p>
+
+<h2>What is happening today !! </h2>
+<div class='today'>
+	<ul>
+	<% @concerts_today.each do |concert| %>
+		<li>
+			<%= link_to(concert.band, concert_path(concert)) %>
+		</li>
+		<% end %>
+</ul>
+	
+<h2>Later this month</h2>
+<div class='month'>
+	<ul>
+	<% @concerts_month.each do |concert| %>
+		<li>
+			<%= link_to(concert.band, concert_path(concert)) %>
+		</li>
+		<% end %>
+</ul>
+
+
+</div>
+
