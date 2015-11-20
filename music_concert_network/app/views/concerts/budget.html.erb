@@ -1,0 +1,8 @@
+<h1> All these concerts are cheaper than that !!</h1>
+
+<ul>
+	<% @list.each do |concert| %>
+		<li><%= link_to(concert.band, concert_path(concert)) %></li>
+	<% end %>
+
+</ul>

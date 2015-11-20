@@ -13,18 +13,17 @@
 			<li>Description: <%= @concert.description %></li>
 	</ul>
 
-
+<h2>Comments from the users: </h2>
 <div class='comments'>
-	<h2>Comments from the users: </h2>
-		<ul>
-			<% @comments.each do |comment| %>
-				<li>
-					<% if comment.content.present? %>
-						<%= comment.content %>
-					<% end %>
-				</li>
-			<% end %>	
-		</ul>
+	<ul>
+		<% @comments.each do |comment| %>
+			<li>
+				<% if comment.content.present? %>
+					<div class="content"><%= comment.content %></div>
+				<% end %>
+			</li>
+		<% end %>	
+	</ul>
 </div>
 
 

@@ -1,9 +1,38 @@
 .comments{
-	background-color: blue;
 	font-size: 25px;
+	border: 1px, solid red;
 }
 
+.content{
+	text-align: center;
+	font-size: 20px;
+	border-radius: 34px 34px 34px 34px;
+	-moz-border-radius: 34px 34px 34px 34px;
+	-webkit-border-radius: 34px 34px 34px 34px;
+	border: 3px solid #042f54;
+}
 
+ul{
+	list-style-type: none;
+}
+
+aside{
+	float: right;
+	position: fixed;
+	right: 30%;
+	border-radius: 34px 34px 34px 34px;
+	-moz-border-radius: 34px 34px 34px 34px;
+	-webkit-border-radius: 34px 34px 34px 34px;
+	border: 3px solid #042f54
+}
+
+footer{
+	font-size: 25px;
+	position: fixed;
+	bottom: 0;
+	right: 45%;
+	text-align: center;
+}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

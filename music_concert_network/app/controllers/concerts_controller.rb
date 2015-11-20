@@ -37,11 +37,17 @@ class ConcertsController < ApplicationController
 
 		if @concert.update_attributes(concert_params)
 			flash[:notice] = 'Comment added successfully'
-			redirect_to action: 'show', controller: 'concerts', id: @concert.id
+			redirect_to action: 'show', controller: 'concerts', concert_id: @concert.id
 		else
 			flash[:notice] = 'Sorry, something went wrong..'
 			render 'show'
 		end
+	end
+
+	def budget
+		@concerts = Concert.all
+		@list = @concerts.where('price < ?',(params[:price]).to_i)
+
 	end
 
 	private

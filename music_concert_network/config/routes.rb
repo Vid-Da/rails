@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post "/budget" => "concerts#budget"
+
   resources :concerts do
     resources :comments, only: [:new, :create, :index]
   end

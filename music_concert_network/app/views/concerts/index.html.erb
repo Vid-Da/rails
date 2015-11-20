@@ -13,6 +13,15 @@
 
 <p><%= link_to("Add concert", new_concert_path) %></p>
 
+<div class="budget">
+	<form action="/budget" method="post">
+	 	Choose your budget:<br>
+	  <input type="number" name="price">
+	  <input type="hidden" name="authenticity_token" value="gygpbfTlw05q4MsBiAKamz4VefG8sK4fQZHGH1jcLLc+Jd0yo6EJrc2EAJHrCc6xzs+pJQmvhuow8Y3srPcG1Q==">
+	  <input type="submit" value="Submit">
+	</form>
+</div>
+
 <h2>What is happening today !! </h2>
 <div class='today'>
 	<ul>
@@ -25,14 +34,15 @@
 </div>
 	
 
-<h2>Later this month</h2>
-<div class='month'>
-	<ul>
-		<% @concerts_month.each do |concert| %>
-			<li>
-				<%= link_to(concert.band, concert_path(concert)) %>
-			</li>
-		<% end %>
-	</ul>
-</div>
+
+<aside class='month'>
+	<h2>Later this month</h2>
+		<ul>
+			<% @concerts_month.each do |concert| %>
+				<li>
+					<%= link_to(concert.band, concert_path(concert)) %>
+				</li>
+			<% end %>
+		</ul>
+</aside>
 
