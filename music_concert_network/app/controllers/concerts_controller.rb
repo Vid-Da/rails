@@ -8,7 +8,7 @@ class ConcertsController < ApplicationController
 	end
 
 	def new
-		@concert = Concert.new(concert_params)
+		@concert = Concert.new
 	end
 
 	def create
@@ -24,7 +24,7 @@ class ConcertsController < ApplicationController
 	end
 
 	def show
-		@concerts = Concert.find_by(band: params[:band])
+		@concert = Concert.find_by(id: params[:id])
 	end
 
 	private

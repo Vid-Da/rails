@@ -3,7 +3,9 @@
 <ul>
 	<% @concerts.each do |concert| %>
 		<li>
-			<%= concert.band %>
+			<%= link_to(concert.band, concert_path(concert)) %>
 		</li>
 		<% end %>
 </ul>
+
+<p><%= link_to("Add concert", new_concert_path) %></p>
