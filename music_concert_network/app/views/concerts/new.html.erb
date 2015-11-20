@@ -1,0 +1,36 @@
+<h2>Creating a new concert</h2>
+<%= flash_message %>
+
+<% if @concert.errors.any? %>
+  <b>Problems to make this happen:</b>
+   <ul>
+	   <% @concert.errors.full_messages.each do |msg| %>
+	     <li><%= msg %></li>
+	   <% end %>
+   </ul>
+<% end %>
+
+<div>
+	<%= form_for [@concert] do |concert| %>
+		<%= concert.label :band %>
+		<%= concert.text_field :band %>
+		<br>
+		<%= concert.label :venue %>
+		<%= concert.text_field :venue %>
+		<br>
+		<%= concert.label :city %>
+		<%= concert.text_field :city %>
+		<br>
+		<%= concert.label :date %>
+		<%= concert.date_field :date %>
+		<br>
+		<%= concert.label :price %>
+		<%= concert.number_field :price %>
+		<br>
+		<%= concert.label :description %>
+		<%= concert.text_field :description %>
+		<br>
+
+		<%= concert.submit 'Save' %>
+	<% end %>
+</div>

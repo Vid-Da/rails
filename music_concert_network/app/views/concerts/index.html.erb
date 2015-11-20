@@ -1,0 +1,9 @@
+<h1>Here the list of concerts! :</h1>
+
+<ul>
+	<% @concerts.each do |concert| %>
+		<li>
+			<%= concert.band %>
+		</li>
+		<% end %>
+</ul>
